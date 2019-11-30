@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@devui-design/icons": "^1.0.0",
     "core-js": "^2.5.4",
     "ng-devui": "^7.0.0",
     "rxjs": "~6.3.3",
