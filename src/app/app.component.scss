@@ -44,7 +44,7 @@
     }
     .devui-accordion-item .devui-accordion-item-title {
         background: #fff;
-        &.active {
+        &.devui-router-active {
             color: #5170ff;
             border-right: 2px solid #5170ff;
         }
