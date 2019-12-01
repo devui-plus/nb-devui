@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ComponentsComponent } from './components/components.component';
 
 const routes: Routes = [
   {
-    path: 'components/get-start', component: ComponentsComponent
+    path: 'home', component: HomeComponent
   },
   {
-    path: 'components/:component/demo', component: ComponentsComponent
+    path: 'components',
+    loadChildren: './components/devui.module#DevUIModule'
   },
-  { path: '', redirectTo: '/components/get-start', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

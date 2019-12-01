@@ -1,2 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="header">
+      <a routerLink="/">DevUI Complementary</a>
+    </div>
+  
+    <div class="menu-container">
+      <d-accordion
+        class="menu"
+        linkType="routerLink"
+        [data]="menu"
+        [restrictOneOpen]="restrictOneOpen"
+      ></d-accordion>
+    </div>
+  
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
