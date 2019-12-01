@@ -1,0 +1,52 @@
+.container {
+    height: 100vh;
+    margin: 0;
+    .header {
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        padding: 0px 20px;
+        box-shadow: 0px 0px 10px 0 rgba(41,48,64,0.2);
+        a {
+            font-size: 20px;
+            font-weight: bold;
+            color: #293040;
+        }
+    }
+    .menu-container {
+        float: left;
+        width: 240px;
+        height: calc(100% - 50px);
+        padding-top: 20px;
+        background: white;
+        border-right: 1px solid #e3e5e9;
+    }
+    .content {
+        float: left;
+        width: calc(100% - 240px);
+        height: calc(100% - 50px);
+        background: white;
+    }
+}
+
+:host ::ng-deep .devui-accordion-menu {
+    box-shadow: none;
+    & > li > .devui-accordion-item-title.over-flow-ellipsis {
+        font-size: 12px;
+        font-weight: 400;
+        color: #959eb2;
+        &:hover {
+            background: #fff;
+        }
+    }
+    .icon-chevron-down {
+        display: none;
+    }
+    .devui-accordion-item .devui-accordion-item-title {
+        background: #fff;
+        &.active {
+            color: #5170ff;
+            border-right: 2px solid #5170ff;
+        }
+    }
+}
