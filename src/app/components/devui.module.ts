@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DevUIRoutingModule } from './devui-routing.module';
-import { ColorPickerDemoComponent } from '../demos/color-picker-demo/color-picker-demo.component';
-import { FluentSliderDemoComponent } from '../demos/fluent-slider-demo/fluent-slider-demo.component';
-import { ImagePreviewDemoComponent } from '../demos/image-preview-demo/image-preview-demo.component';
-import { SmartInputDemoComponent } from '../demos/smart-input-demo/smart-input-demo.component';
+import { ColorPickerDemoComponent } from './color-picker/color-picker-demo/color-picker-demo.component';
+import { FluentSliderDemoComponent } from './fluent-slider/fluent-slider-demo/fluent-slider-demo.component';
+import { ImagePreviewDemoComponent } from './image-preview/image-preview-demo/image-preview-demo.component';
+import { SmartInputDemoComponent } from './smart-input/smart-input-demo/smart-input-demo.component';
 import { ColorPickerComponent } from '../components/color-picker/color-picker.component';
 import { FluentSliderComponent } from '../components/fluent-slider/fluent-slider.component';
 import { ImagePreviewComponent } from '../components/image-preview/image-preview.component';

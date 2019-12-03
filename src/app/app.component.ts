@@ -14,19 +14,19 @@ export class AppComponent {
     children: [
       {
         title: 'ColorPicker 颜色选择',
-        link: '/demos/color-picker/demo',
+        link: '/components/color-picker/demo',
       },
       {
         title: 'FluentSlider 轮播',
-        link: '/demos/fluent-slider/demo',
+        link: '/components/fluent-slider/demo',
       }, 
       {
         title: 'ImagePreview 图片预览',
-        link: '/demos/image-preview/demo',
+        link: '/components/image-preview/demo',
       },
       {
         title: 'SmartInput 文本输入',
-        link: '/demos/smart-input/demo',
+        link: '/components/smart-input/demo',
       }
     ]
   }];
