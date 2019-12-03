@@ -8,8 +8,8 @@ const routes: Routes = [
     path: 'home', component: HomeComponent
   },
   {
-    path: 'demos',
-    loadChildren: './demos/devui.module#DevUIModule'
+    path: 'components',
+    loadChildren: './components/devui.module#DevUIModule'
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

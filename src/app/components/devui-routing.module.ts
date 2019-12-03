@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ColorPickerDemoComponent } from '../demos/color-picker-demo/color-picker-demo.component';
-import { FluentSliderDemoComponent } from '../demos/fluent-slider-demo/fluent-slider-demo.component';
-import { ImagePreviewDemoComponent } from '../demos/image-preview-demo/image-preview-demo.component';
-import { SmartInputDemoComponent } from '../demos/smart-input-demo/smart-input-demo.component';
+import { ColorPickerDemoComponent } from './color-picker/color-picker-demo/color-picker-demo.component';
+import { FluentSliderDemoComponent } from './fluent-slider/fluent-slider-demo/fluent-slider-demo.component';
+import { ImagePreviewDemoComponent } from './image-preview/image-preview-demo/image-preview-demo.component';
+import { SmartInputDemoComponent } from './smart-input/smart-input-demo/smart-input-demo.component';
 
 const routes: Routes = [
   {
