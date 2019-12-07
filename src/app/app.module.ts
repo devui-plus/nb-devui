@@ -18,7 +18,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DevUIModule
+    DevUIModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

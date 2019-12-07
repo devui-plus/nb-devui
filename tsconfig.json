@@ -17,6 +17,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-devui-plus": [
+        "dist/ng-devui-plus"
+      ],
+      "ng-devui-plus/*": [
+        "dist/ng-devui-plus/*"
+      ],
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ]
+    }
   }
 }
