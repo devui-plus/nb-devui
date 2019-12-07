@@ -2,29 +2,34 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DevUIRoutingModule } from './devui-routing.module';
-import { ColorPickerDemoComponent } from './color-picker/color-picker-demo/color-picker-demo.component';
-import { FluentSliderDemoComponent } from './fluent-slider/fluent-slider-demo/fluent-slider-demo.component';
-import { ImagePreviewDemoComponent } from './image-preview/image-preview-demo/image-preview-demo.component';
-import { SmartInputDemoComponent } from './smart-input/smart-input-demo/smart-input-demo.component';
-import { ColorPickerComponent } from '../components/color-picker/color-picker.component';
-import { FluentSliderComponent } from '../components/fluent-slider/fluent-slider.component';
-import { ImagePreviewComponent } from '../components/image-preview/image-preview.component';
-import { SmartInputComponent } from '../components/smart-input/smart-input.component';
+
+// 本地开发时使用
+import { ColorPickerModule } from '../../../ng-devui-plus/color-picker';
+import { FluentSliderModule } from '../../../ng-devui-plus/fluent-slider';
+import { ImagePreviewModule } from '../../../ng-devui-plus/image-preview';
+import { SmartInputModule } from '../../../ng-devui-plus/smart-input';
+
+// 打包验证时使用
+// import { ColorPickerModule } from '../../../dist/ng-devui-plus/color-picker';
+// import { FluentSliderModule } from '../../../dist/ng-devui-plus/fluent-slider';
+// import { ImagePreviewModule } from '../../../dist/ng-devui-plus/image-preview';
+// import { SmartInputModule } from '../../../dist/ng-devui-plus/smart-input';
+
+// 正式发布时使用
+// import { ColorPickerModule } from 'ng-devui-plus/color-picker';
+// import { FluentSliderModule } from 'ng-devui-plus/fluent-slider';
+// import { ImagePreviewModule } from 'ng-devui-plus/image-preview';
+// import { SmartInputModule } from 'ng-devui-plus/smart-input';
 
 @NgModule({
   imports: [
     CommonModule,
-    DevUIRoutingModule
+    DevUIRoutingModule,
+    ColorPickerModule,
+    FluentSliderModule,
+    ImagePreviewModule,
+    SmartInputModule
   ],
-  declarations: [
-    ColorPickerDemoComponent,
-    FluentSliderDemoComponent,
-    ImagePreviewDemoComponent,
-    SmartInputDemoComponent,
-    ColorPickerComponent,
-    FluentSliderComponent,
-    ImagePreviewComponent,
-    SmartInputComponent
-  ]
+  declarations: []
 })
 export class DevUIModule { }
