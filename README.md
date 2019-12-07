@@ -2,15 +2,15 @@
 </p>
 
 
-<h1 align="center">DevUI Complementary for Angular</h1>
-The DevUI Complementary contains several components of DevUI. DevUI Complementary allows developers to focus more on application logic, while designers focus on user experience, interactions, and processes.
+<h1 align="center">DevUI Plus for Angular</h1>
+The DevUI Plus contains several components of DevUI. DevUI Plus allows developers to focus more on application logic, while designers focus on user experience, interactions, and processes.
 
 ## Components
 
-- [ ] Input
-- [ ] Slider
-- [ ] ImagePreview
-- [ ] ColorPicker
+- [ ] ColorPicker 颜色选择组件
+- [ ] FluentSlider 轮播组件
+- [ ] ImagePreview 图片预览组件
+- [ ] SmartInput 输入组件
 
 To see more in [devui.design](https://devui.design/home).
 
