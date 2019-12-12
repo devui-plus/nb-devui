@@ -1,11 +1,11 @@
 .color-picker {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 350px;
     & > div {
         padding: 5px;
     }
     .colors {
-        height: 150px;
+        height: 200px;
         & > div {
             height: calc(100% - 10px);
             margin: 5px 5px;
@@ -18,10 +18,22 @@
             }
         }
         .panel {
+            position: relative;
             width: calc(100% - 110px);
             background:
                 linear-gradient(to top, rgba(0, 0, 0, 1), transparent),
                 linear-gradient(to left, hsla(290, 100%, 50%, 1), rgba(255, 255, 255, 1));
+            .pointer {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border: 2px solid white;
+                border-radius: 20px;
+                &.dragging {
+                    cursor: grabbing;
+                }
+            }
         }
         .color-bar {
             width: 20px;
