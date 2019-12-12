@@ -19,7 +19,9 @@
         }
         .panel {
             width: calc(100% - 110px);
-            background: green;
+            background:
+                linear-gradient(to top, rgba(0, 0, 0, 1), transparent),
+                linear-gradient(to left, hsla(290, 100%, 50%, 1), rgba(255, 255, 255, 1));
         }
         .color-bar {
             width: 20px;
