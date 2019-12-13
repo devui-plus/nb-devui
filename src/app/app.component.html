@@ -1,9 +1,12 @@
 <div class="container">
     <div class="header">
-      <a routerLink="/">DevUI Complementary</a>
+      <a href="javascript:;" class="btn-menu" (click)="showMenu()"></a>
+      <a class="title" routerLink="/">DevUI Plus</a>
     </div>
   
-    <div class="menu-container">
+    <div class="menu-container" [ngStyle]="{
+      display: menuShow ? 'block' : 'none'
+    }">
       <d-accordion
         class="menu"
         linkType="routerLink"

@@ -1,0 +1,28 @@
+$menu-size: 34px;
+
+@mixin btn-menu {
+    .btn-menu {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        display: inline-block;
+        width: $menu-size;
+        height: $menu-size;
+        background-image: url('assets/menu.svg');
+        background-size: $menu-size $menu-size;
+        background-repeat: no-repeat;
+    }
+}
+
+@mixin title {
+    a.title {
+        width: 50%;
+        text-align: center;
+        word-break: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
