@@ -37,11 +37,12 @@
         }
         .color-bar {
             width: 20px;
-            background: yellow;
+            background: linear-gradient(to bottom, 
+            #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
         }
         .opacity-bar {
             width: 20px;
-            background: darkcyan;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1)),
         }
     }
     .selected {
