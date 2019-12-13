@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'nb-devui';
   restrictOneOpen = false;
+  menuShow: boolean;
   menu = [{
     title: '通用',
     open: true,
@@ -30,4 +31,20 @@ export class AppComponent {
       }
     ]
   }];
+
+  @HostListener('window:resize', ['$event']) onresize(event) {
+    this.menuShow = !this.isMobile(event.target.innerWidth);
+  }
+
+  ngOnInit() {
+    this.menuShow = !this.isMobile(screen.width);
+  }
+
+  isMobile(screenWidth) {
+    return screenWidth >= 320 && screenWidth < 1024;
+  }
+
+  showMenu() {
+    this.menuShow = !this.menuShow
+  }
 }
