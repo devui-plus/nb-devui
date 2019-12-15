@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng build --prod ng-devui-plus"
+    "build:lib": "ng build --prod ng-devui-plus",
+    "build:prod": "ng build --prod"
   },
   "private": true,
   "dependencies": {
