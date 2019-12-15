@@ -8,6 +8,7 @@ import { ColorPickerModule } from '../../../ng-devui-plus/color-picker';
 import { FluentSliderModule } from '../../../ng-devui-plus/fluent-slider';
 import { ImagePreviewModule } from '../../../ng-devui-plus/image-preview';
 import { SmartInputModule } from '../../../ng-devui-plus/smart-input';
+import { ShiningEditorModule } from '../../../ng-devui-plus/shining-editor';
 
 // 打包验证时使用
 // import { ColorPickerModule } from '../../../dist/ng-devui-plus/color-picker';
@@ -28,7 +29,8 @@ import { SmartInputModule } from '../../../ng-devui-plus/smart-input';
     ColorPickerModule,
     FluentSliderModule,
     ImagePreviewModule,
-    SmartInputModule
+    SmartInputModule,
+    ShiningEditorModule
   ],
   declarations: []
 })
