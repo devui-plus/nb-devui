@@ -1,0 +1,18 @@
+.se-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50px;
+}
+
+.se-editor {
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    ul {
+        list-style: decimal;
+    }
+    ol {
+        list-style: disc;
+    }
+}

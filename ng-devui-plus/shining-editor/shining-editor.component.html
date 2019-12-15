@@ -1,3 +1,150 @@
-<p>
-  shining-editor works!
-</p>
+<div class="se-toolbar">
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'undo')">
+    撤销
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'redo')">
+    重做
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'removeFormat')">
+    清除格式
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'formatBlock', 'h1')">
+    标题1
+  </d-button>
+  <d-button 
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'formatBlock', 'h2')">
+    标题2
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'formatBlock', 'h3')">
+    标题3
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'fontName', 'Heiti SC')">
+    字体
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'fontSize', '5')">
+    字号
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'bold')">
+    加粗
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'italic')">
+    斜体
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'underline')">
+    下划线
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'strikeThrough')">
+    删除线
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'superscript')">
+    上角标
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'subscript')">
+    下角标
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'foreColor', '#f00')">
+    颜色
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'backColor', '#ff0')">
+    背景色
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'insertOrderedList')">
+    有序列表
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'insertUnorderedList')">
+    无序列表
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'justifyLeft')">
+    左对齐
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'justifyCenter')">
+    居中对齐
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'justifyRight')">
+    右对齐
+  </d-button>
+
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'createLink', 'https://www.huaweicloud.com/')">
+    超链接
+  </d-button>
+  <d-button
+    bsStyle="text-dark"
+    style="margin-right: 10px"
+    (btnClick)="format($event, 'unlink')">
+    删除超链接
+  </d-button>
+</div>
+<div class="se-editor" contenteditable="true" autofocus>
+  Hello world
+</div>
