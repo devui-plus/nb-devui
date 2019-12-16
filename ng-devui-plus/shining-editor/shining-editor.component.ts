@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'd-shining-editor',
@@ -6,15 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shining-editor.component.scss']
 })
 export class ShiningEditorComponent implements OnInit {
+  @ViewChild('editor') editor: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  format(event, command, value) {
-    console.log('event:', event);
-    console.log('command:', command);
+  save() {
+    this.editor.nativeElement.contentEditable = false;
+  }
+
+  modify() {
+    this.editor.nativeElement.contentEditable = true;
+  }
+
+  format(event: MouseEvent, command: string, value: string) {
     document.execCommand(command, false, value);
 
     /**
