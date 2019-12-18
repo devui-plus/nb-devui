@@ -1,0 +1,42 @@
+@import './assets/base.scss';
+
+.se-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    .icon {
+        display: inline-block;
+        width: $icon-size;
+        height: $icon-size;
+        margin-right: 10px;
+        background-size: $icon-size $icon-size;
+        cursor: pointer;
+    }
+    @include icon-image;
+}
+
+.se-editor {
+    min-height: 300px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.operation-bar {
+    margin: 10px;
+}
+
+:host ::ng-deep {
+    ul, ol {
+        margin-left: 40px;
+    }
+    ul {
+        list-style-type: decimal;
+    }
+    ol {
+        list-style-type: disc;
+    }
+}

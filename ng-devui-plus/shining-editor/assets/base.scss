@@ -1,0 +1,73 @@
+$icon-size: 18px;
+
+@mixin icon-image {
+    .icon-undo {
+        background-image: url(./assets/icons/undo.svg);
+    }
+    .icon-redo {
+        background-image: url(./assets/icons/redo.svg);
+    }
+    .icon-clean {
+        background-image: url(./assets/icons/clean.svg);
+    }
+    .icon-h1 {
+        background-image: url(./assets/icons/icon-h1.svg);
+    }
+    .icon-h2 {
+        background-image: url(./assets/icons/icon-h2.svg);
+    }
+    .icon-h3 {
+        background-image: url(./assets/icons/icon-h3.svg);
+    }
+    .icon-font {
+        background-image: url(./assets/icons/font.svg);
+    }
+    .icon-size {
+        background-image: url(./assets/icons/size.svg);
+    }
+    .icon-bold {
+        background-image: url(./assets/icons/bold.svg);
+    }
+    .icon-italic {
+        background-image: url(./assets/icons/italic.svg);
+    }
+    .icon-underline {
+        background-image: url(./assets/icons/underline.svg);
+    }
+    .icon-strike {
+        background-image: url(./assets/icons/strike.svg);
+    }
+    .icon-superscript {
+        background-image: url(./assets/icons/superscript.svg);
+    }
+    .icon-subscript {
+        background-image: url(./assets/icons/subscript.svg);
+    }
+    .icon-forecolor {
+        background-image: url(./assets/icons/forecolor.svg);
+    }
+    .icon-backcolor {
+        background-image: url(./assets/icons/backcolor.svg);
+    }
+    .icon-order-list {
+        background-image: url(./assets/icons/order-list.svg);
+    }
+    .icon-unorder-list {
+        background-image: url(./assets/icons/unorder-list.svg);
+    }
+    .icon-align-left {
+        background-image: url(./assets/icons/align-left.svg);
+    }
+    .icon-align-center {
+        background-image: url(./assets/icons/align-center.svg);
+    }
+    .icon-align-right {
+        background-image: url(./assets/icons/align-right.svg);
+    }
+    .icon-link {
+        background-image: url(./assets/icons/link.svg);
+    }
+    .icon-unlink {
+        background-image: url(./assets/icons/unlink.svg);
+    }
+}

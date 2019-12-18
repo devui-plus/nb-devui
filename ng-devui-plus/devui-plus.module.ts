@@ -4,6 +4,7 @@ import { ColorPickerModule } from './color-picker';
 import { FluentSliderModule } from './fluent-slider';
 import { ImagePreviewModule } from './image-preview';
 import { SmartInputModule } from './smart-input';
+import { ShiningEditorModule } from './shining-editor/shining-editor.module';
 
 export * from './color-picker';
 export * from './fluent-slider';
@@ -17,8 +18,8 @@ export * from './smart-input';
     FluentSliderModule,
     ImagePreviewModule,
     SmartInputModule,
-  ],
-  declarations: []
+    ShiningEditorModule
+  ]
 })
 export class DevUIPlusModule {
   static forRoot(): ModuleWithProviders {

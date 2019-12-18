@@ -28,6 +28,10 @@ export class AppComponent implements OnInit {
       {
         title: 'SmartInput 文本输入',
         link: '/components/smart-input/demo',
+      },
+      {
+        title: 'ShiningEditor 富文本',
+        link: '/components/shining-editor/demo',
       }
     ]
   }];

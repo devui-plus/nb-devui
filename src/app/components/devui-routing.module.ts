@@ -6,6 +6,7 @@ import { ColorPickerDemoComponent } from '../../../ng-devui-plus/color-picker/co
 import { FluentSliderDemoComponent } from '../../../ng-devui-plus/fluent-slider/fluent-slider-demo/fluent-slider-demo.component';
 import { ImagePreviewDemoComponent } from '../../../ng-devui-plus/image-preview/image-preview-demo/image-preview-demo.component';
 import { SmartInputDemoComponent } from '../../../ng-devui-plus/smart-input/smart-input-demo/smart-input-demo.component';
+import { ShiningEditorDemoComponent } from '../../../ng-devui-plus/shining-editor/shining-editor-demo/shining-editor-demo.component';
 
 // 打包验证时使用
 // import { ColorPickerDemoComponent } from '../../../dist/ng-devui-plus/color-picker';
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'smart-input/demo',
     component: SmartInputDemoComponent
+  },
+  {
+    path: 'shining-editor/demo',
+    component: ShiningEditorDemoComponent
   }
 ];
 

@@ -141,6 +141,11 @@
       "sourceRoot": "ng-devui-plus/src",
       "projectType": "library",
       "prefix": "d",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
