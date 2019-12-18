@@ -21,7 +21,7 @@ export class ShiningEditorComponent implements OnInit {
     this.editor.nativeElement.contentEditable = true;
   }
 
-  format(event: MouseEvent, command: string, value: string) {
+  format(event: MouseEvent, command: string, value: string = null) {
     document.execCommand(command, false, value);
 
     /**
