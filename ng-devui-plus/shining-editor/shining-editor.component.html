@@ -3,29 +3,46 @@
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'redo')"><i class="icon icon-redo" title="重做"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'removeFormat')"><i class="icon icon-clean" title="清除格式"></i></d-button>
 
+  <d-inline-splitter color="#fff"></d-inline-splitter>
+
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'formatBlock', 'h1')"><i class="icon icon-h1" title="标题1"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'formatBlock', 'h2')"><i class="icon icon-h2" title="标题2"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'formatBlock', 'h3')"><i class="icon icon-h3" title="标题3"></i></d-button>
+
+  <d-inline-splitter color="#fff"></d-inline-splitter>
+
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'fontName', 'Heiti SC')"><i class="icon icon-font" title="字体"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'fontSize', '5')"><i class="icon icon-size" title="字号"></i></d-button>
+
+  <d-inline-splitter color="#fff"></d-inline-splitter>
+
+  <d-button bsStyle="text-dark" (btnClick)="format($event, 'foreColor', '#f00')"><i class="icon icon-forecolor" title="颜色"></i></d-button>
+  <d-button bsStyle="text-dark" (btnClick)="format($event, 'backColor', '#ff0')"><i class="icon icon-backcolor" title="背景色"></i></d-button>
+
+  <d-inline-splitter color="#fff"></d-inline-splitter>
 
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'bold')"><i class="icon icon-bold" title="加粗"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'italic')"><i class="icon icon-italic" title="斜体"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'underline')"><i class="icon icon-underline" title="下划线"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'strikeThrough')"><i class="icon icon-strike" title="删除线"></i></d-button>
 
+  <d-inline-splitter color="#fff"></d-inline-splitter>
+  
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'superscript')"><i class="icon icon-superscript" title="上角标"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'subscript')"><i class="icon icon-subscript" title="下角标"></i></d-button>
 
-  <d-button bsStyle="text-dark" (btnClick)="format($event, 'foreColor', '#f00')"><i class="icon icon-forecolor" title="颜色"></i></d-button>
-  <d-button bsStyle="text-dark" (btnClick)="format($event, 'backColor', '#ff0')"><i class="icon icon-backcolor" title="背景色"></i></d-button>
+  <d-inline-splitter color="#fff"></d-inline-splitter>
 
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'insertOrderedList')"><i class="icon icon-order-list" title="有序列表"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'insertUnorderedList')"><i class="icon icon-unorder-list" title="无序列表"></i></d-button>
 
+  <d-inline-splitter color="#fff"></d-inline-splitter>
+
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'justifyLeft')"><i class="icon icon-align-left" title="左对齐"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'justifyCenter')"><i class="icon icon-align-center" title="居中对齐"></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'justifyRight')"><i class="icon icon-align-right" title="右对齐"></i></d-button>
+
+  <d-inline-splitter color="#fff"></d-inline-splitter>
 
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'createLink', 'https://www.huaweicloud.com/')"><i class="icon icon-link" title="超链接" ></i></d-button>
   <d-button bsStyle="text-dark" (btnClick)="format($event, 'unlink')"><i class="icon icon-unlink" title="删除超链接"></i></d-button>
