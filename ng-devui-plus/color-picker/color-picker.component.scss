@@ -1,0 +1,31 @@
+@import '../style/theme/color';
+
+.container {
+    position: relative;
+}
+
+.color-picker {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 300px;
+    height: 320px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px 0 rgba(41,48,64,0.2);
+    hr {
+        border-top: 1px solid $gray3;
+    }
+    .control {
+        .color-cube {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            vertical-align: bottom;
+        }
+        input {
+            height: 32px;
+            line-height: 30px;
+            margin: 0 5px;
+        }
+    }
+}

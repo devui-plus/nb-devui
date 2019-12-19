@@ -1,4 +1,29 @@
-<p>
-  color-picker-demo works!
-</p>
-<app-color-picker></app-color-picker>
+<div class="container">
+  <h1>ColorPicker 颜色选择</h1>
+  <p>颜色选择组件。</p>
+  <h3>何时使用</h3>
+  <p>用户需要改变组件色彩的的时候。</p>
+  <d-tabs [type]="'tabs'" [(activeTab)]="tab1acticeID">
+    <d-tab id="tab1" title="Demo" tabId="tab1">
+      <ng-template dTabContent>
+        <div class="demo-title">基本用法</div>
+        <div>
+          <div
+            class="color-cube"
+            (click)="showColorPicker()"
+            [ngStyle]="{'background-color': backgroundColor}"
+          ></div>
+          <app-color-picker [hide]="hideColorPicker" (confirm)="onConfirm($event)"></app-color-picker>
+        </div>
+      </ng-template>
+    </d-tab>
+
+    <d-tab id="tab2" title="API" tabId="tab2">
+      <ng-template dTabContent>
+        <p>
+          API
+        </p>
+      </ng-template>
+    </d-tab>
+  </d-tabs>
+</div>

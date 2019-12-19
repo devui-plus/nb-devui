@@ -1,3 +1,13 @@
-<p>
-  color-picker works!
-</p>
+<div class="container">
+  <div class="color-picker" *ngIf="!hide">
+    <hr>
+    <div class="control">
+      <div
+        class="color-cube"
+        [ngStyle]="{'background-color': color}"
+      ></div>
+      <input [(ngModel)]="color">
+      <d-button (click)="confirm.emit(color)">确认</d-button>
+    </div>
+  </div>
+</div>
