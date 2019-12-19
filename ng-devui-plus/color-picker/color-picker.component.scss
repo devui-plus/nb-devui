@@ -11,7 +11,23 @@
     width: 300px;
     height: 320px;
     padding: 10px;
+    color: $dark2;
     box-shadow: 0px 4px 8px 0 rgba(41,48,64,0.2);
+    .title {
+        &:first-child {
+            margin-top: 0;
+        }
+        margin: 10px 0;
+    }
+    .color-panel {
+        color: $gray1;
+        span {
+            cursor: pointer;
+        }
+        span.selected {
+            color: $dark2;
+        }
+    }
     hr {
         border-top: 1px solid $gray3;
     }
@@ -28,4 +44,11 @@
             margin: 0 5px;
         }
     }
+}
+
+.color-block {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 6px 6px 0;
 }
