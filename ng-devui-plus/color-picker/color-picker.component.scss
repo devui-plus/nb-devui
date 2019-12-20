@@ -29,7 +29,9 @@
         }
     }
     hr {
-        border-top: 1px solid $gray3;
+        margin: 15px 0;
+        border: none;
+        border-top: 1px dotted $gray2;
     }
     .control {
         .color-cube {
@@ -39,9 +41,16 @@
             vertical-align: bottom;
         }
         input {
-            height: 32px;
+            height: 30px;
             line-height: 30px;
             margin: 0 5px;
+            border: 1px solid $gray2;
+        }
+        button {
+            height: 30px;
+            width: 80px;
+            border: 1px solid $gray2;
+            border-radius: 3px;
         }
     }
 }
@@ -51,4 +60,12 @@
     width: 20px;
     height: 20px;
     margin: 0 6px 6px 0;
+}
+
+.color-block, .color-cube {
+    border: 1px solid $gray2;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
