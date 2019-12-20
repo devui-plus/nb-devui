@@ -27,10 +27,7 @@
     </div>
     <hr>
     <div class="control">
-      <div
-        class="color-cube"
-        [ngStyle]="{'background-color': color}"
-      ></div>
+      <app-color-cube [color]="color"></app-color-cube>
       <input [(ngModel)]="color">
       <button (click)="confirm.emit(color)">确认</button>
     </div>
