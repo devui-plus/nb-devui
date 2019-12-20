@@ -12,7 +12,7 @@ export class ColorPickerComponent implements OnInit {
   @Output() confirm = new EventEmitter();
   color: string = "#b52d2d";
   selectedPanel: string = 'basic';
-  recentlyUsed: Array<string> = ['#1daf68'];
+  recentlyUsed: Array<string> = ['#fff'];
   basicColors: Array<string> = ['#1daf68', '#b52d2d'];
 
   constructor() { }
@@ -26,6 +26,21 @@ export class ColorPickerComponent implements OnInit {
 
   setColor(color) {
     this.color = color
+  }
+  
+  doConfirm() {
+    this.saveRecentlyUsed()
+    this.confirm.emit(this.color)
+  }
+
+  saveRecentlyUsed() {
+    let recentlyUsed = this.recentlyUsed
+    if (!(recentlyUsed.length && recentlyUsed[0] === this.color))
+      recentlyUsed.unshift((this.color))
+    if (recentlyUsed.length > 9) {
+      recentlyUsed = recentlyUsed.slice(0, 9)
+    }
+    this.recentlyUsed = recentlyUsed
   }
 
 }
