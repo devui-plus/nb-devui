@@ -13,7 +13,11 @@
             (click)="showColorPicker()"
             [ngStyle]="{'background-color': backgroundColor}"
           ></div>
-          <app-color-picker [hide]="hideColorPicker" (confirm)="onConfirm($event)"></app-color-picker>
+          <app-color-picker
+            [hide]="hideColorPicker"
+            (cancel)="onCancel()"
+            (confirm)="onConfirm($event)"
+          ></app-color-picker>
         </div>
       </ng-template>
     </d-tab>

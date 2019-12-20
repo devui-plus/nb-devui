@@ -9,6 +9,7 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class ColorPickerComponent implements OnInit {
   @Input() hide;
+  @Output() cancel = new EventEmitter();
   @Output() confirm = new EventEmitter();
   color: string = "#b52d2d";
   selectedPanel: string = 'basic';
