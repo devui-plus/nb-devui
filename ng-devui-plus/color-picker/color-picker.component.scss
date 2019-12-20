@@ -1,0 +1,71 @@
+@import '../style/theme/color';
+
+.container {
+    position: relative;
+}
+
+.color-picker {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 300px;
+    height: 320px;
+    padding: 10px;
+    color: $dark2;
+    box-shadow: 0px 4px 8px 0 rgba(41,48,64,0.2);
+    .title {
+        &:first-child {
+            margin-top: 0;
+        }
+        margin: 10px 0;
+    }
+    .color-panel {
+        color: $gray1;
+        span {
+            cursor: pointer;
+        }
+        span.selected {
+            color: $dark2;
+        }
+    }
+    hr {
+        margin: 15px 0;
+        border: none;
+        border-top: 1px dotted $gray2;
+    }
+    .control {
+        .color-cube {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            vertical-align: bottom;
+        }
+        input {
+            height: 30px;
+            line-height: 30px;
+            margin: 0 5px;
+            border: 1px solid $gray2;
+        }
+        button {
+            height: 30px;
+            width: 80px;
+            border: 1px solid $gray2;
+            border-radius: 3px;
+        }
+    }
+}
+
+.color-block {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 6px 6px 0;
+}
+
+.color-block, .color-cube {
+    border: 1px solid $gray2;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

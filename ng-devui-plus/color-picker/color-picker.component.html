@@ -1,3 +1,38 @@
-<p>
-  color-picker works!
-</p>
+<div class="container">
+  <div class="color-picker" *ngIf="!hide">
+    <div class="recently-used">
+      <div class="title">最近使用颜色</div>
+      <div class="color-blocks">
+        <div
+          class="color-block"
+          [ngStyle]="{'background-color': color}"
+          *ngFor="let color of recentlyUsed"
+          (click)="setColor(color)"
+        ></div>
+    </div>
+    <div class="color-panel">
+      <div class="title">
+        <span [class.selected]="'basic' === selectedPanel" (click)="selectPanel('basic')">基本色</span>
+        |
+        <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
+      </div>
+      <div class="color-blocks" *ngIf="'basic' === selectedPanel">
+        <div
+          class="color-block"
+          [ngStyle]="{'background-color': color}"
+          *ngFor="let color of basicColors"
+          (click)="setColor(color)"
+          ></div>
+      </div>
+    </div>
+    <hr>
+    <div class="control">
+      <div
+        class="color-cube"
+        [ngStyle]="{'background-color': color}"
+      ></div>
+      <input [(ngModel)]="color">
+      <button (click)="confirm.emit(color)">确认</button>
+    </div>
+  </div>
+</div>
