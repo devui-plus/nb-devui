@@ -32,6 +32,11 @@ export class AppComponent implements OnInit {
       {
         title: 'ShiningEditor 富文本',
         link: '/components/shining-editor/demo',
+      },
+
+      {
+        title: 'ColorPicker 颜色选择 - Mithril',
+        link: '/components/mithril/color-picker/demo',
       }
     ]
   }];

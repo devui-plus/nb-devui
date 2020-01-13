@@ -27,6 +27,12 @@
       ],
       "@angular/*": [
         "./node_modules/@angular/*"
+      ],
+      "mr-devui-plus": [
+        "dist/mr-devui-plus"
+      ],
+      "mr-devui-plus/*": [
+        "dist/mr-devui-plus/*"
       ]
     }
   }
