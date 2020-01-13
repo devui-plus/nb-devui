@@ -180,6 +180,41 @@
           }
         }
       }
+    },
+    "mr-devui-plus": {
+      "root": "projects/mr-devui-plus",
+      "sourceRoot": "projects/mr-devui-plus/src",
+      "projectType": "library",
+      "prefix": "m",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mr-devui-plus/tsconfig.lib.json",
+            "project": "projects/mr-devui-plus/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mr-devui-plus/src/test.ts",
+            "tsConfig": "projects/mr-devui-plus/tsconfig.spec.json",
+            "karmaConfig": "projects/mr-devui-plus/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mr-devui-plus/tsconfig.lib.json",
+              "projects/mr-devui-plus/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nb-devui"

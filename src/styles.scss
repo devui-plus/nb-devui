@@ -2,7 +2,12 @@
 @import '~ng-devui/devui.min.css';
 @import '~@devui-design/icons/icomoon/devui-icon.css';
 @import './assets/mobile.scss';
+@import '../ng-devui-plus/style/component.scss';
 
 body {
     margin: 0;
+}
+
+#mithril-root {
+    @include color-cube;
 }

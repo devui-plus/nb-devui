@@ -10,6 +10,8 @@ import { ImagePreviewModule } from '../../../ng-devui-plus/image-preview';
 import { SmartInputModule } from '../../../ng-devui-plus/smart-input';
 import { ShiningEditorModule } from '../../../ng-devui-plus/shining-editor';
 
+import { MrDevuiPlusModule } from '../../../projects/mr-devui-plus/src/lib/mr-devui-plus.module';
+
 // 打包验证时使用
 // import { ColorPickerModule } from '../../../dist/ng-devui-plus/color-picker';
 // import { FluentSliderModule } from '../../../dist/ng-devui-plus/fluent-slider';
@@ -30,7 +32,9 @@ import { ShiningEditorModule } from '../../../ng-devui-plus/shining-editor';
     FluentSliderModule,
     ImagePreviewModule,
     SmartInputModule,
-    ShiningEditorModule
+    ShiningEditorModule,
+
+    MrDevuiPlusModule
   ],
   declarations: []
 })

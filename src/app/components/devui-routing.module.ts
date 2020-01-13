@@ -8,6 +8,8 @@ import { ImagePreviewDemoComponent } from '../../../ng-devui-plus/image-preview/
 import { SmartInputDemoComponent } from '../../../ng-devui-plus/smart-input/smart-input-demo/smart-input-demo.component';
 import { ShiningEditorDemoComponent } from '../../../ng-devui-plus/shining-editor/shining-editor-demo/shining-editor-demo.component';
 
+import { MrDevuiPlusComponent } from '../../../projects/mr-devui-plus/src/lib/mr-devui-plus.component';
+
 // 打包验证时使用
 // import { ColorPickerDemoComponent } from '../../../dist/ng-devui-plus/color-picker';
 // import { FluentSliderDemoComponent } from '../../../dist/ng-devui-plus/fluent-slider';
@@ -40,6 +42,10 @@ const routes: Routes = [
   {
     path: 'shining-editor/demo',
     component: ShiningEditorDemoComponent
+  },
+  {
+    path: 'mithril/color-picker/demo',
+    component: MrDevuiPlusComponent
   }
 ];
 

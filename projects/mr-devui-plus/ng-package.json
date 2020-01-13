@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/mr-devui-plus",
+  "lib": {
+    "entryFile": "./index.ts"
+  }
+}
