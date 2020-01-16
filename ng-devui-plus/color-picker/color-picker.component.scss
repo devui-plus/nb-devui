@@ -1,4 +1,5 @@
 @import '../style/theme/color';
+@import '../style/component.scss';
 
 .container {
     position: relative;
@@ -45,24 +46,8 @@
         border-top: 1px dotted $gray2;
     }
     .control {
-        .color-cube {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            vertical-align: bottom;
-        }
-        input {
-            height: 30px;
-            line-height: 30px;
-            margin: 0 5px;
-            border: 1px solid $gray2;
-        }
-        button {
-            height: 30px;
-            width: 80px;
-            border: 1px solid $gray2;
-            border-radius: 3px;
-        }
+        @include color-input;
+        @include confirm-button;
     }
 }
 
