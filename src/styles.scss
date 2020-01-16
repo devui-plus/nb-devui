@@ -9,5 +9,9 @@ body {
 }
 
 #mithril-root {
-    @include color-cube;
+    .control {
+        @include color-cube;
+        @include color-input;
+        @include confirm-button;
+    }
 }
