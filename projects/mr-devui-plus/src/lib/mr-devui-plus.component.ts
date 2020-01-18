@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as m from 'mithril';
-import { ColorInput } from '../components/color-picker/color-input';
+import { ColorInput } from './components/color-picker/color-input';
 
 @Component({
   selector: 'm-mr-devui-plus',
