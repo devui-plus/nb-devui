@@ -26,6 +26,7 @@
     "core-js": "^2.5.4",
     "mithril": "^2.0.4",
     "ng-devui": "^7.0.0",
+    "ng-devui-plus": "^0.1.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
