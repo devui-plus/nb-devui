@@ -3,14 +3,14 @@
 @mixin color-cube {
     .color-cube {
         display: inline-block;
-        width: 30px;
-        height: 30px;
         vertical-align: bottom;
+        border: 1px solid $gray2;
     }
 }
 
 @mixin color-input {
     input {
+        width: 110px;
         height: 30px;
         line-height: 30px;
         margin: 0 5px;
@@ -24,5 +24,13 @@
         width: 80px;
         border: 1px solid $gray2;
         border-radius: 3px;
+    }
+}
+
+@mixin hr {
+    hr {
+        margin: 15px 0;
+        border: none;
+        border-top: 1px dotted $gray2;
     }
 }

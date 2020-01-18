@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as m from 'mithril';
-import { ColorInput } from './components/color-picker/color-input';
+import { ColorPicker } from './components/color-picker/color-picker';
 
 @Component({
   selector: 'm-mr-devui-plus',
@@ -16,7 +16,7 @@ export class MrDevuiPlusComponent implements OnInit {
 
   ngOnInit() {
     const root = document.querySelector('#mithril-root');
-    m.mount(root, ColorInput);
+    m.mount(root, ColorPicker);
   }
 
 }
