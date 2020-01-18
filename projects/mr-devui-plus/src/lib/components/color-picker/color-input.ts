@@ -5,7 +5,10 @@ import { ColorInputModel } from './model';
 export const ColorInput = {
     view: function() {
         return m('.control', [
-            m(ColorCube, { color: ColorInputModel.color }),
+            m(ColorCube, { 
+                onclick: ColorInputModel.confirm,
+                color: ColorInputModel.color 
+            }),
             m('input[type=text]', { 
                 oninput: ColorInputModel.setColor,
                 value: ColorInputModel.color 
