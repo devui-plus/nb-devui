@@ -40,11 +40,7 @@
             color: $dark2;
         }
     }
-    hr {
-        margin: 15px 0;
-        border: none;
-        border-top: 1px dotted $gray2;
-    }
+    @include hr;
     .control {
         @include color-input;
         @include confirm-button;
@@ -58,13 +54,10 @@
     margin: 0 6px 6px 0;
 }
 
-.color-block, .color-cube {
+.color-block {
     border: 1px solid $gray2;
 }
 
 textarea:focus, input:focus{
     outline: none;
-}
-input{
-    width: 110px;
 }

@@ -9,8 +9,17 @@ body {
 }
 
 #mithril-root {
+    @include color-cube;
+    .color-picker {
+        width: 234px;
+    }
+    .color-blocks {
+        .color-block {
+            margin: 0 6px 6px 0;
+        }
+    }
+    @include hr;
     .control {
-        @include color-cube;
         @include color-input;
         @include confirm-button;
     }
