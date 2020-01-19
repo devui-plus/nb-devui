@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { saveRecentColors } from '../shared/utils';
 
 @Component({
   selector: 'app-color-picker',
@@ -35,13 +34,7 @@ export class ColorPickerComponent implements OnInit {
   }
 
   saveRecentlyUsed() {
-    let recentlyUsed = this.recentlyUsed
-    if (!(recentlyUsed.length && recentlyUsed[0] === this.color))
-      recentlyUsed.unshift((this.color))
-    if (recentlyUsed.length > 9) {
-      recentlyUsed = recentlyUsed.slice(0, 9)
-    }
-    this.recentlyUsed = recentlyUsed
+    saveRecentColors(this.recentlyUsed, this.color);
   }
 
 }

@@ -13,7 +13,9 @@ export const ColorInput = {
                 oninput: ColorInputModel.setColor,
                 value: ColorInputModel.color 
             }),
-            m('button', { onclick: ColorInputModel.confirm }, '确定')
+            m('button', { onclick: function() {
+                ColorInputModel.confirm(ColorInputModel.color);
+            } }, '确定')
         ])
     }
 }

@@ -1,10 +1,12 @@
+import { saveRecentColors } from '../../../../../../ng-devui-plus/shared/utils';
+
 export const ColorInputModel = {
     color: '#1daf68',
     setColor: function(event) {
         ColorInputModel.color = event.target.value;
     },
-    confirm: function() {
-        console.log('confirm color:', ColorInputModel.color);
+    confirm: function(color) {
+        saveRecentColors(recentColorModel.recentColors, color);
     }
 };
 
@@ -18,5 +20,12 @@ export const basicColorModel = {
     ],
     setBasicColor: function(color) {
         ColorInputModel.color = color;
+    }
+};
+
+export const recentColorModel = {
+    recentColors: ['#ffffff'],
+    setRecentColor: function(color) {
+        ColorInputModel.confirm(color);
     }
 };
