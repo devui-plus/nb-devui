@@ -28,7 +28,7 @@
     </div>
     <hr>
     <div class="control">
-      <app-color-cube [color]="color"></app-color-cube>
+      <app-color-cube [color]="color" (click)="setColor(color)"></app-color-cube>
       <input [(ngModel)]="color">
       <button (click)="doConfirm()">确认</button>
     </div>
