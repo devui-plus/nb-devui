@@ -1,4 +1,4 @@
-@import '../../style/theme/color';
+@import '../../../../../ng-devui-plus/style/theme/color';
 
 .container {
     padding: 0 60px;
@@ -12,7 +12,6 @@ h3 + p {
     margin-bottom: 20px;
 }
 
-
 .demo-title {
     font-size: 14px;
     color: #293040;
@@ -24,4 +23,10 @@ h3 + p {
 .color-cube {
     width: 30px;
     height: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        padding: 0 10px;
+    }
 }
