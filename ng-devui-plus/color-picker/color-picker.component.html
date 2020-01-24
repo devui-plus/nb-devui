@@ -25,6 +25,11 @@
           (click)="setColor(color)"
           ></div>
       </div>
+      <div class="color-blocks" *ngIf="'more' === selectedPanel">
+        <app-advanced-color
+          [color]="color"
+        ></app-advanced-color>
+      </div>
     </div>
     <hr>
     <div class="control">
