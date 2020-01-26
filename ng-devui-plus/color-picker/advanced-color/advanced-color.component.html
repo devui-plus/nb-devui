@@ -1,7 +1,6 @@
 <div class="advanced-color">
-  <div class="advanced-color-panel" 
-    [ngStyle]="{'background-color': color}"
-    (click)="sendColor(color)"
-  ></div>
+  <app-advanced-color-panel
+    [color]="color"
+  ></app-advanced-color-panel>
   <div class="color-slider"></div>
 </div>
