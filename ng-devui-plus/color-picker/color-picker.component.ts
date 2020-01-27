@@ -9,7 +9,7 @@ import { saveRecentColors } from '../shared/utils';
 export class ColorPickerComponent implements OnInit {
   @Input() hide;
   @Output() cancel = new EventEmitter();
-  @Output() update = new EventEmitter();
+  @Output() send = new EventEmitter();
   @Output() confirm = new EventEmitter();
   color: string = "#b52d2d";
   selectedPanel: string = 'basic';
@@ -27,7 +27,7 @@ export class ColorPickerComponent implements OnInit {
 
   setColor(color) {
     this.color = color
-    this.update.emit(this.color)
+    this.send.emit(this.color)
   }
 
   receiveColor(color) {
@@ -40,7 +40,7 @@ export class ColorPickerComponent implements OnInit {
   }
 
   saveRecentlyUsed() {
-    this.update.emit(this.color)
+    this.send.emit(this.color)
     saveRecentColors(this.recentlyUsed, this.color);
   }
 

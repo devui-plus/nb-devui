@@ -23,7 +23,7 @@ export class ColorPickerDemoComponent implements OnInit {
     this.hideColorPicker = true
   }
 
-  updateColor(color) {
+  receiveColor(color) {
     this.backgroundColor = color
   }
 
