@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
-import { colorToPureColor, getColorByPosition } from '../../../shared/utils/color';
+import { colorToPureColor, getColorByPosition, getColorPosition } from '../../../shared/utils/color';
 
 @Component({
   selector: 'app-advanced-color-panel',
@@ -54,7 +54,10 @@ export class AdvancedColorPanelComponent implements OnInit {
     }
     // HACK: 这里计算offsetleft的时候把自己的高度也算进去了，不知道为什么
     this.panel.top -= this.panel.height
-    this.pointer.left = panel.offsetWidth
+    // init pointer position
+    var position = getColorPosition(this.color)
+    this.pointer.left = position.x * this.panel.width
+    this.pointer.top = position.y * this.panel.height
   }
 
   mouseClick(event: MouseEvent) {

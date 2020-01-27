@@ -44,6 +44,23 @@ function getColorByPosition(hex, x, y) {
   return rgbToHex(rgb[0], rgb[1], rgb[2])
 }
 
+/**
+ * Map pure(top right) color to the pointed color
+ *
+ * @param   {string} hex
+ * @return  {object}          position
+ */
+function getColorPosition(hex) {
+  var rgb = hexToRgb(hex)
+  var x, y = 0
+  x = 1 - Math.min(...rgb) / 255
+  y = 1 - Math.max(...rgb) / 255
+  return {
+    x,
+    y
+  }
+}
+
 function rgbToHex(r, g, b) {
   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
@@ -59,5 +76,6 @@ function hexToRgb(hex) {
 
 export {
     getColorByPosition,
-    colorToPureColor
+    colorToPureColor,
+    getColorPosition
 }
