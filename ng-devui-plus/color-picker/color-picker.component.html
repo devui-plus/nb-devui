@@ -17,7 +17,7 @@
         |
         <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
       </div>
-      <div class="color-blocks" *ngIf="'basic' === selectedPanel">
+      <div *ngIf="'basic' === selectedPanel">
         <div
           class="color-block"
           [ngStyle]="{'background-color': color}"
@@ -25,7 +25,7 @@
           (click)="setColor(color)"
           ></div>
       </div>
-      <div class="color-blocks" *ngIf="'more' === selectedPanel">
+      <div *ngIf="'more' === selectedPanel">
         <app-advanced-color
           [color]="color"
         ></app-advanced-color>
