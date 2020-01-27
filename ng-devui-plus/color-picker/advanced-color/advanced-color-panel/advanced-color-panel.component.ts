@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
-import { pureColorHex, mapInPanel } from '../../../shared/utils/color';
+import { colorToPureColor, getColorByPosition } from '../../../shared/utils/color';
 
 @Component({
   selector: 'app-advanced-color-panel',
@@ -32,7 +32,7 @@ export class AdvancedColorPanelComponent implements OnInit {
   }
 
   getPureColor() {
-    this.pureColor = pureColorHex(this.color)
+    this.pureColor = colorToPureColor(this.color)
   }
 
   initPanel() {
@@ -89,7 +89,7 @@ export class AdvancedColorPanelComponent implements OnInit {
   }
 
   getColor() {
-    this.color = mapInPanel(this.pureColor, this.pointer.left/this.panel.width, this.pointer.top/this.panel.height)
+    this.color = getColorByPosition(this.pureColor, this.pointer.left/this.panel.width, this.pointer.top/this.panel.height)
     this.send.emit(this.color)
   }
 
