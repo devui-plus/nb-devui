@@ -15,6 +15,7 @@
           ></div>
           <app-color-picker
             [hide]="hideColorPicker"
+            [color]="backgroundColor"
             (cancel)="onCancel()"
             (send)="receiveColor($event)"
             (confirm)="onConfirm($event)"
