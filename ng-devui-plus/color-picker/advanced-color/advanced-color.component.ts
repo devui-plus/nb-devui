@@ -15,8 +15,8 @@ export class AdvancedColorComponent implements OnInit {
   ngOnInit() {
   }
 
-  sendColor() {
-    this.send.emit(this.color)
+  receiveColor(color) {
+    this.send.emit(color)
   }
 
 }

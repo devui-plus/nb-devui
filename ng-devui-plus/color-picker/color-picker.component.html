@@ -28,6 +28,7 @@
       <div *ngIf="'more' === selectedPanel">
         <app-advanced-color
           [color]="color"
+          (send)="receiveColor($event)"
         ></app-advanced-color>
       </div>
     </div>

@@ -29,6 +29,10 @@ export class ColorPickerComponent implements OnInit {
     this.color = color
     this.update.emit(this.color)
   }
+
+  receiveColor(color) {
+    this.setColor(color)
+  }
   
   doConfirm() {
     this.saveRecentlyUsed()
