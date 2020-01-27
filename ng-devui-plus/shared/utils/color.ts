@@ -5,18 +5,16 @@
 /**
  * Color to Pure Color
  *
- * @param   {string} hex
+ * @param   {string} hex      hex color
  * @param   {number} x        from 0 to 1
  * @param   {number} y        from 0 to 1
  * @return  {string}          hex
  */
 function colorToPureColor(hex) {
   var rgb = hexToRgb(hex)
-  // remove white
   rgb = rgb.map(c => {
     return c - Math.min(...rgb)
   })
-  // remove black
   rgb = rgb.map(c => {
     return Math.round(c * 250 / Math.max(...rgb))
   })
@@ -26,7 +24,7 @@ function colorToPureColor(hex) {
 /**
  * Map pure(top right) color to the pointed color
  *
- * @param   {string} hex
+ * @param   {string} hex      hex color
  * @param   {number} x        from 0 to 1
  * @param   {number} y        from 0 to 1
  * @return  {string}          hex
@@ -45,9 +43,9 @@ function getColorByPosition(hex, x, y) {
 }
 
 /**
- * Map pure(top right) color to the pointed color
+ * Get the color position in the panel
  *
- * @param   {string} hex
+ * @param   {string} hex      hex color
  * @return  {object}          position
  */
 function getColorPosition(hex) {
