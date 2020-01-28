@@ -15,6 +15,9 @@ function colorToPureColor(hex) {
   rgb = rgb.map(c => {
     return c - Math.min(...rgb)
   })
+  // if the input hex is white/gray/black
+  if (sum(rgb) == 0)
+    return '#ffffff'
   rgb = rgb.map(c => {
     return Math.round(c * 250 / Math.max(...rgb))
   })
@@ -70,6 +73,14 @@ function hexToRgb(hex) {
     parseInt(result[2], 16),
     parseInt(result[3], 16)
   ] : null
+}
+
+function sum(nums) {
+  var sum = 0
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i]
+  }
+  return sum
 }
 
 export {
