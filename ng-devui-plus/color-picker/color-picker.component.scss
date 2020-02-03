@@ -42,7 +42,6 @@
     }
     @include hr;
     .control {
-        @include color-input;
         @include confirm-button;
     }
 }
@@ -50,8 +49,4 @@
 .color-cube {
     display: inline-block;
     margin: 0 6px 6px 0;
-}
-
-textarea:focus, input:focus{
-    outline: none;
 }

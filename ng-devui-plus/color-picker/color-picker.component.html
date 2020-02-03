@@ -32,7 +32,7 @@
     <hr>
     <div class="control">
       <app-color-cube [color]="color" [size]="30" (click)="setColor(color)"></app-color-cube>
-      <input [(ngModel)]="color">
+      <d-color-input [color]="color" (colorChange)="doColorChange($event)"></d-color-input>
       <button (click)="doConfirm()">确认</button>
     </div>
   </div>
