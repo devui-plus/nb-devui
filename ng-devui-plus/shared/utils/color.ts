@@ -21,7 +21,8 @@ function colorToPureColor(hex) {
   rgb = rgb.map(c => {
     return Math.round(c * 250 / Math.max(...rgb))
   })
-  return rgbToHex(rgb[0], rgb[1], rgb[2])
+  // HACK: rgbToHex(...rgb) not working, and i have no idea of it.
+  return rgbToHex.apply(null, rgb)
 }
 
 /**
@@ -42,7 +43,7 @@ function getColorByPosition(hex, x, y) {
   rgb = rgb.map(c => {
     return Math.round(c * (1 - y))
   })
-  return rgbToHex(rgb[0], rgb[1], rgb[2])
+  return rgbToHex.apply(null, rgb)
 }
 
 /**
