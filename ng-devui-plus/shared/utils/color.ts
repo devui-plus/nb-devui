@@ -3,6 +3,32 @@
 // ----------------------------------------------------------------------------
 
 /**
+ * Get Color by Pointer Position in Slider
+ *
+ * @param   {number} x        from 0 to 1
+ * @return  {string}          hex
+ */
+function getColorByPointerPositionInSlider(x) {
+  var sliderColors = ['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff', '#ff0000']
+  var rgb = hexToRgb(sliderColors[0])
+  // Write your code here
+  return rgbToHex.apply(null, rgb)
+}
+
+/**
+ * Get Pointer Position in Slider by Color
+ *
+ * @param   {string} hex      hex color
+ * @return  {number}          from 0 to 1
+ */
+function getPointerPositionInSliderByColor(hex) {
+  var sliderColors = ['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff', '#ff0000']
+  var x = 0
+  // Write your code here
+  return x
+}
+
+/**
  * Color to Pure Color
  *
  * @param   {string} hex      hex color
@@ -87,5 +113,7 @@ function sum(nums) {
 export {
     getColorByPosition,
     colorToPureColor,
-    getColorPosition
+    getColorPosition,
+    getColorByPointerPositionInSlider,
+    getPointerPositionInSliderByColor
 }
