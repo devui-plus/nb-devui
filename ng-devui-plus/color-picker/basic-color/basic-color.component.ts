@@ -7,7 +7,6 @@ import { Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./basic-color.component.scss']
 })
 export class BasicColorComponent implements OnInit {
-  @Input() color;
   @Input() basicColors;
   @Output() colorChange = new EventEmitter();
   constructor() { }

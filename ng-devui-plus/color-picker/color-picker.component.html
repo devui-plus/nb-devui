@@ -22,7 +22,6 @@
       <div class="color-cubes" *ngIf="'basic' === selectedPanel"> 
         <d-basic-color
           [basicColors]="basicColors" 
-          [color]="color"
           (colorChange)="doColorChange($event)"
         ></d-basic-color>
       </div>
