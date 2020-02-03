@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ColorPickerComponent } from './color-picker.component';
 import { ColorCubeComponent } from './color-cube/color-cube.component';
+import { ColorInputComponent } from './color-input/color-input.component';
 import { CommonModule } from '@angular/common';
 import { DevUIModule } from 'ng-devui';
 import { FormsModule } from '@angular/forms';
@@ -14,10 +15,12 @@ import { FormsModule } from '@angular/forms';
     exports: [
         ColorPickerComponent,
         ColorCubeComponent,
+        ColorInputComponent,
     ],
     declarations: [
         ColorPickerComponent,
         ColorCubeComponent,
+        ColorInputComponent,
     ],
     providers: [],
 })

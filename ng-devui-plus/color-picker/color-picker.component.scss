@@ -42,7 +42,6 @@
     }
     @include hr;
     .control {
-        @include color-input;
         @include confirm-button;
     }
 }
@@ -56,8 +55,4 @@
 
 .color-block {
     border: 1px solid $gray2;
-}
-
-textarea:focus, input:focus{
-    outline: none;
 }
