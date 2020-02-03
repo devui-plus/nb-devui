@@ -19,14 +19,12 @@
         |
         <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
       </div>
-      <div class="color-cubes" *ngIf="'basic' === selectedPanel">
-        <app-color-cube
-          class="color-cube"
-          [size]="20"
-          [ngStyle]="{'background-color': color}"
-          *ngFor="let color of basicColors"
-          (click)="setColor(color)"
-          ></app-color-cube>
+      <div class="color-cubes" *ngIf="'basic' === selectedPanel"> 
+        <d-basic-color
+          [basicColors]="basicColors" 
+          [color]="color"
+          (colorChange)="doColorChange($event)"
+        ></d-basic-color>
       </div>
     </div>
     <hr>
