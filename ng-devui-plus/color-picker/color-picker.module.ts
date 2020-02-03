@@ -5,6 +5,7 @@ import { ColorPickerDemoComponent } from './color-picker-demo/color-picker-demo.
 import { CommonModule } from '@angular/common';
 import { DevUIModule } from 'ng-devui';
 import { FormsModule } from '@angular/forms';
+import { BasicColorComponent } from './basic-color/basic-color.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     declarations: [
         ColorPickerComponent,
         ColorCubeComponent,
-        ColorPickerDemoComponent
+        ColorPickerDemoComponent,
+        BasicColorComponent
     ],
     providers: [],
 })

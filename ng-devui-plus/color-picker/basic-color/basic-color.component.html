@@ -1,0 +1,6 @@
+<div
+class="color-block"
+[ngStyle]="{'background-color': color}"
+*ngFor="let color of basicColors"
+(click)="sendColor(color)"
+></div>

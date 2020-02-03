@@ -18,17 +18,12 @@
         <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
       </div>
       <div class="color-blocks" *ngIf="'basic' === selectedPanel">
-        <div
-          class="color-block"
-          [ngStyle]="{'background-color': color}"
-          *ngFor="let color of basicColors"
-          (click)="setColor(color)"
-          ></div>
+          <app-basic-color [basicColors]="basicColors" [color]="color" (send) = "receiveColor($event)"></app-basic-color>
       </div>
     </div>
     <hr>
     <div class="control">
-      <app-color-cube [color]="color"></app-color-cube>
+      <app-color-cube></app-color-cube>
       <input [(ngModel)]="color">
       <button (click)="doConfirm()">确认</button>
     </div>

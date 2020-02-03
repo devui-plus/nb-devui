@@ -24,7 +24,7 @@ export class ColorPickerComponent implements OnInit {
     this.selectedPanel = panel
   }
 
-  setColor(color) {
+  receiveColor(color) {
     this.color = color
   }
   
