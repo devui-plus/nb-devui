@@ -4,12 +4,14 @@
     <div class="recently-used">
       <div class="title">最近使用颜色</div>
       <div class="color-cubes">
-        <div
+        <app-color-cube
           class="color-cube"
+          [size]="20"
           [ngStyle]="{'background-color': color}"
-          *ngFor="let color of recentlyUsed"
+          *ngFor="let color of recentlyUsed" 
           (click)="setColor(color)"
-        ></div>
+        ></app-color-cube>
+      </div>
     </div>
     <div class="color-panel">
       <div class="title">
@@ -18,17 +20,18 @@
         <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
       </div>
       <div class="color-cubes" *ngIf="'basic' === selectedPanel">
-        <div
+        <app-color-cube
           class="color-cube"
+          [size]="20"
           [ngStyle]="{'background-color': color}"
           *ngFor="let color of basicColors"
           (click)="setColor(color)"
-          ></div>
+          ></app-color-cube>
       </div>
     </div>
     <hr>
     <div class="control">
-      <app-color-cube [color]="color"></app-color-cube>
+      <app-color-cube [color]="color" [size]="30" (click)="setColor(color)"></app-color-cube>
       <input [(ngModel)]="color">
       <button (click)="doConfirm()">确认</button>
     </div>
