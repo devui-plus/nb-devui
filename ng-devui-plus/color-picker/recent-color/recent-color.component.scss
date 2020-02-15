@@ -1,8 +1,7 @@
+@import '../../style/component.scss';
+
+@include color-cube;
+
 .title {
     margin: 10px 0;
-}
-
-.color-cube {
-    display: inline-block;
-    margin: 0 6px 6px 0;
 }
