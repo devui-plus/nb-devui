@@ -3,7 +3,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
 import { colorToPureColor, getColorByPosition, getColorPosition } from '../../../shared/utils/color';
 
 @Component({
-  selector: 'app-advanced-color-panel',
+  selector: 'd-advanced-color-panel',
   templateUrl: './advanced-color-panel.component.html',
   styleUrls: ['./advanced-color-panel.component.scss']
 })

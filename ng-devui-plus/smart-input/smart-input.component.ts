@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-smart-input',
+  selector: 'd-smart-input',
   templateUrl: './smart-input.component.html',
   styleUrls: ['./smart-input.component.scss']
 })

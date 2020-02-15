@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { saveRecentColors } from '../shared/utils';
 
 @Component({
-  selector: 'app-color-picker',
+  selector: 'd-color-picker',
   templateUrl: './color-picker.component.html',
   styleUrls: ['./color-picker.component.scss']
 })

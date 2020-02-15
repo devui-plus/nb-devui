@@ -1,9 +1,9 @@
 <div class="advanced-color">
-  <app-advanced-color-panel
+  <d-advanced-color-panel
     [color]="color"
     [pureColor]="pureColor"
     (send)="receiveColor($event)"
-  ></app-advanced-color-panel>
+  ></d-advanced-color-panel>
   <d-color-slider
     [color]="color"
     (send)="receivePureColor($event)"
