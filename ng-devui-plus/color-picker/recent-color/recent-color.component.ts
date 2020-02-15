@@ -16,10 +16,20 @@ export class RecentColorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.loadFromLocalData()
+  }
+  
+  loadFromLocalData() {
+    this.recentlyUsed = JSON.parse(localStorage.getItem('recentlyUsed')) || []
+  }
+
+  saveToLocalData() {
+    localStorage.setItem('recentlyUsed', JSON.stringify(this.recentlyUsed))
   }
 
   saveRecentlyUsed() {
     saveRecentColors(this.recentlyUsed, this.color, this.limit);
+    this.saveToLocalData()
   }
 
   sendColor(color) {
