@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fluent-slider',
+  selector: 'd-fluent-slider',
   templateUrl: './fluent-slider.component.html',
   styleUrls: ['./fluent-slider.component.scss']
 })

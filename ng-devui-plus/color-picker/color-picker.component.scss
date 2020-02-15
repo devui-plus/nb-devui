@@ -38,10 +38,4 @@
         }
     }
     @include hr;
-    .control {
-        button {
-            vertical-align: top;
-        }
-        @include confirm-button;
-    }
 }

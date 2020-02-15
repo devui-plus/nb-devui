@@ -8,7 +8,8 @@ import { Input, Output, EventEmitter } from '@angular/core';
 })
 export class ColorInputComponent implements OnInit {
   @Input() color;
-  @Output() colorChange = new EventEmitter();
+  @Output() send = new EventEmitter();
+  @Output() confirm = new EventEmitter();
 
   constructor() { }
 
@@ -16,6 +17,10 @@ export class ColorInputComponent implements OnInit {
   }
 
   inputChange() {
-    this.colorChange.emit(this.color)
+    this.send.emit(this.color)
+  }
+
+  doConfirm() {
+    this.confirm.emit(this.color)
   }
 }

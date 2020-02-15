@@ -1,3 +1,10 @@
 @import '../../style/component.scss';
 
 @include color-input;
+
+.color-input {
+  button {
+      vertical-align: top;
+  }
+  @include confirm-button;
+}
