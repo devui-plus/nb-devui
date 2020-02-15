@@ -94,8 +94,11 @@ function getColorByPosition(hex, x, y) {
 function getColorPosition(hex) {
   var rgb = hexToRgb(hex)
   var x, y = 0
-  x = 1 - Math.min(...rgb) / 255
   y = 1 - Math.max(...rgb) / 255
+  rgb = rgb.map(c => {
+    return Math.round(c / (1 - y))
+  })
+  x = 1 - Math.min(...rgb) / 255
   return {
     x,
     y
