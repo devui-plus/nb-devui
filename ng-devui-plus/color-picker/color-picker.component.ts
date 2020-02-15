@@ -35,13 +35,10 @@ export class ColorPickerComponent implements OnInit {
   }
   
   doConfirm() {
-    this.saveRecentlyUsed()
     this.confirm.emit(this.color)
   }
 
-  saveRecentlyUsed() {
-    this.send.emit(this.color)
-    saveRecentColors(this.recentlyUsed, this.color);
+  doColorChange(color) {
+    this.setColor(color)
   }
-
 }

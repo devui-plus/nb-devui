@@ -42,22 +42,6 @@
     }
     @include hr;
     .control {
-        @include color-input;
         @include confirm-button;
     }
-}
-
-.color-block {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 0 6px 6px 0;
-}
-
-.color-block {
-    border: 1px solid $gray2;
-}
-
-textarea:focus, input:focus{
-    outline: none;
 }

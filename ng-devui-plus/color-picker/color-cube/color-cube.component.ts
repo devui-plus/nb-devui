@@ -7,14 +7,11 @@ import { Input } from '@angular/core';
   styleUrls: ['./color-cube.component.scss']
 })
 export class ColorCubeComponent implements OnInit {
-  width: number;
-  height: number;
   @Input() color;
-  @Input() size = 30;
+  @Input() size;
   
   constructor() { 
-    this.width = this.size;
-    this.height = this.size;
+
   }
 
   ngOnInit() {

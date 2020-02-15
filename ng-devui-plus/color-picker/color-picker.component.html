@@ -1,29 +1,22 @@
 <div class="container" *ngIf="!hide">
   <div class="cancel-mask" (click)="cancel.emit()"></div>
   <div class="color-picker">
-    <div class="recently-used">
-      <div class="title">最近使用颜色</div>
-      <div class="color-blocks">
-        <div
-          class="color-block"
-          [ngStyle]="{'background-color': color}"
-          *ngFor="let color of recentlyUsed"
-          (click)="setColor(color)"
-        ></div>
-    </div>
+    <d-recent-color #recentColor
+      [color]="color"
+      [limit]="8"
+      (colorChange)="doColorChange($event)"
+    ></d-recent-color>
     <div class="color-panel">
       <div class="title">
         <span [class.selected]="'basic' === selectedPanel" (click)="selectPanel('basic')">基本色</span>
         |
         <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
       </div>
-      <div *ngIf="'basic' === selectedPanel">
-        <div
-          class="color-block"
-          [ngStyle]="{'background-color': color}"
-          *ngFor="let color of basicColors"
-          (click)="setColor(color)"
-          ></div>
+      <div class="color-cubes" *ngIf="'basic' === selectedPanel"> 
+        <d-basic-color
+          [basicColors]="basicColors" 
+          (colorChange)="doColorChange($event)"
+        ></d-basic-color>
       </div>
       <div *ngIf="'more' === selectedPanel">
         <app-advanced-color
@@ -34,9 +27,9 @@
     </div>
     <hr>
     <div class="control">
-      <app-color-cube [color]="color" (click)="setColor(color)"></app-color-cube>
-      <input [(ngModel)]="color">
-      <button (click)="doConfirm()">确认</button>
+      <app-color-cube [color]="color" [size]="30" (click)="setColor(color)"></app-color-cube>
+      <d-color-input [color]="color" (colorChange)="doColorChange($event)"></d-color-input>
+      <button (click)="recentColor.saveRecentlyUsed(); doConfirm()">确认</button>
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ export const ColorInputModel = {
         ColorInputModel.color = event.target.value;
     },
     confirm: function(color) {
-        saveRecentColors(recentColorModel.recentColors, color);
+        saveRecentColors(recentColorModel.recentColors, color, 9);
     }
 };
 

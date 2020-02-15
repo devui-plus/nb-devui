@@ -1,0 +1,6 @@
+<app-color-cube
+  [size]="20"
+  [color]="color"
+  *ngFor="let color of basicColors"
+  (click)="sendColor(color)"
+></app-color-cube>
