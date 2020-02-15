@@ -9,6 +9,7 @@ import { saveRecentColors } from '../../shared/utils';
 })
 export class RecentColorComponent implements OnInit {
   @Input() color;
+  @Input() limit: number;
   @Output() colorChange = new EventEmitter();
   recentlyUsed: Array<string> = ['#fff'];
 
@@ -18,7 +19,7 @@ export class RecentColorComponent implements OnInit {
   }
 
   saveRecentlyUsed() {
-    saveRecentColors(this.recentlyUsed, this.color);
+    saveRecentColors(this.recentlyUsed, this.color, this.limit);
   }
 
   sendColor(color) {
