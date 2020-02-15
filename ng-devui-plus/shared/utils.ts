@@ -1,23 +1,27 @@
 export function saveRecentColors(recentColors: string[], currentColor: string, limit: number) {
-  if (colorExisted(recentColors, currentColor))
-    return
-  else
-    recentColors.unshift((currentColor))
+  var indexOfCurrent = indexOfColor(recentColors, currentColor)
+  if ((indexOfCurrent >= 0)) {
+    recentColors.splice(indexOfCurrent, 1)
+  }
+  recentColors.unshift((currentColor))
   if (recentColors.length > limit) {
     recentColors.splice(limit, 1)
   }
   return
 }
 
-function colorExisted(recentColors: string[], currentColor: string) {
-  for (const color of recentColors) {
-    if (colorSpread(color) == colorSpread(currentColor))
-      return true
+function indexOfColor(recentColors: string[], currentColor: string) {
+  for (var i = 0; i < recentColors.length; i++) {
+    if (hexColorSpread(recentColors[i]) == hexColorSpread(currentColor))
+      return i
   }
-  return false
+  return -1
 }
 
-function colorSpread(color: string) {
+/**
+ * Spread hex color. e.g. '#fff' => '#ffffff'
+ */
+function hexColorSpread(color: string) {
   var colorArr = color.split('')
   if (colorArr.length == 4) {
     for (var i = 3; i > 0; i--) {
