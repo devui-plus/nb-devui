@@ -11,8 +11,5 @@
         border: 1px solid white;
         border-radius: 10px;
         pointer-events: none;
-        &.dragging {
-            cursor: grabbing;
-        }
     }
 }
