@@ -32,6 +32,11 @@ export class RecentColorComponent implements OnInit {
     this.saveToLocalData()
   }
 
+  clearColor() {
+    this.recentlyUsed = []
+    this.saveToLocalData()
+  }
+
   sendColor(color) {
     this.colorChange.emit(color);
   }
