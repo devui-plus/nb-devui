@@ -3,6 +3,7 @@ import { ColorPickerComponent } from './color-picker.component';
 import { ColorCubeComponent } from './color-cube/color-cube.component';
 import { AdvancedColorComponent } from './advanced-color/advanced-color.component';
 import { AdvancedColorPanelComponent } from './advanced-color/advanced-color-panel/advanced-color-panel.component';
+import { ColorSliderComponent } from './advanced-color/color-slider/color-slider.component';
 import { ColorInputComponent } from './color-input/color-input.component';
 import { CommonModule } from '@angular/common';
 import { DevUIModule } from 'ng-devui';
@@ -21,6 +22,7 @@ import { RecentColorComponent } from './recent-color/recent-color.component';
         ColorCubeComponent,
         AdvancedColorComponent,
         AdvancedColorPanelComponent,
+        ColorSliderComponent,
         ColorInputComponent,
         BasicColorComponent,
         RecentColorComponent,
@@ -30,6 +32,7 @@ import { RecentColorComponent } from './recent-color/recent-color.component';
         ColorCubeComponent,
         AdvancedColorComponent,
         AdvancedColorPanelComponent,
+        ColorSliderComponent,
         ColorInputComponent,
         BasicColorComponent,
         RecentColorComponent,
