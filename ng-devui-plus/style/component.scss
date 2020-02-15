@@ -11,11 +11,12 @@
 
 @mixin color-input {
     input {
-        width: 110px;
+        width: 108px;
         height: 30px;
         line-height: 30px;
         margin: 0 5px;
         border: 1px solid $gray2;
+        vertical-align: top;
     }
     textarea:focus, input:focus{
         outline: none;
