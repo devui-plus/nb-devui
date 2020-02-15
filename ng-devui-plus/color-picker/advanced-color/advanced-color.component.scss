@@ -1,0 +1,12 @@
+.advanced-color {
+    width: 100%;
+    height: 130px;
+    .color-slider {
+        width: 20px;
+        height: 100%;
+        display: inline-block;
+        margin-left: 10px;
+        background: linear-gradient(to bottom, 
+        #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+    }
+}

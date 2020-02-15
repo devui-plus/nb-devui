@@ -19,16 +19,13 @@
     left: 0px;
     width: 264px;
     height: 320px;
-    padding: 10px;
+    padding: 10px 15px;
     color: $dark2;
     box-shadow: 0px 4px 8px 0 rgba(41,48,64,0.2);
     .recently-used{
         padding-left: 10px;
     }
     .title {
-        &:first-child {
-            margin-top: 0;
-        }
         margin: 10px 0;
     }
     .color-panel {
@@ -42,6 +39,9 @@
     }
     @include hr;
     .control {
+        button {
+            vertical-align: top;
+        }
         @include confirm-button;
     }
 }
