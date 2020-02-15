@@ -48,7 +48,7 @@ export class ColorSliderComponent implements OnInit {
     // HACK: 这里计算offsetleft的时候把自己的高度也算进去了，不知道为什么
     this.panel.top -= this.panel.height
     // init pointer position
-    var position = getPointerPositionInSliderByColor(this.color)
+    var position = getPointerPositionInSliderByColor(this.pureColor)
     this.pointer.top = position * this.panel.height
   }
 
@@ -76,8 +76,8 @@ export class ColorSliderComponent implements OnInit {
   }
 
   getColor() {
-    this.color = getColorByPointerPositionInSlider(this.pointer.top/this.panel.height)
-    this.send.emit(this.color)
+    this.pureColor = getColorByPointerPositionInSlider(this.pointer.top/this.panel.height)
+    this.send.emit(this.pureColor)
   }
 
   mouseUp() {

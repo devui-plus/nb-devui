@@ -9,6 +9,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
 export class AdvancedColorComponent implements OnInit {
   @Input() color;
   @Output() send = new EventEmitter();
+  pureColor: string;
 
   constructor() { }
 
@@ -19,4 +20,7 @@ export class AdvancedColorComponent implements OnInit {
     this.send.emit(color)
   }
 
+  receivePureColor(pureColor) {
+    this.pureColor = pureColor
+  }
 }

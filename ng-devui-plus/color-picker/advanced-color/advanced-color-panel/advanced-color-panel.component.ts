@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { colorToPureColor, getColorByPosition, getColorPosition } from '../../../shared/utils/color';
 
@@ -9,8 +9,8 @@ import { colorToPureColor, getColorByPosition, getColorPosition } from '../../..
 })
 export class AdvancedColorPanelComponent implements OnInit {
   @Input() color;
+  @Input() pureColor;
   @Output() send = new EventEmitter();
-  pureColor: string;
   panel = {
     top: 0,
     left: 0,
@@ -29,6 +29,15 @@ export class AdvancedColorPanelComponent implements OnInit {
   ngOnInit() {
     this.getPureColor()
     this.initPanel()
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.pureColor && (changes.pureColor.previousValue != changes.pureColor.currentValue)) {
+      // To resolve the ExpressionChangedAfterItHasBeenCheckedError
+      setTimeout(() => {
+        this.getColor()
+      }, 100);
+    }
   }
 
   getPureColor() {

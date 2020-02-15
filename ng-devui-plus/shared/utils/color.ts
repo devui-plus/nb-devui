@@ -4,14 +4,16 @@
 
 /**
  * Get Color by Pointer Position in Slider
+ * Slider Colors: ['#ff0000', '#ffff00', '#00ff00', '#00ffff', 
+ *                 '#0000ff', '#ff00ff', '#ff0000']
  *
  * @param   {number} x        from 0 to 1
  * @return  {string}          hex
  */
 function getColorByPointerPositionInSlider(x) {
-  var sliderColors = ['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff', '#ff0000']
-  var rgb = hexToRgb(sliderColors[0])
-  // Write your code here
+  var rgb = ['r', 'g', 'b'].map(channel => {
+    return getColorOfOneChannelByPointerPositionInSlider(x, channel)
+  })
   return rgbToHex.apply(null, rgb)
 }
 
@@ -22,9 +24,20 @@ function getColorByPointerPositionInSlider(x) {
  * @return  {number}          from 0 to 1
  */
 function getPointerPositionInSliderByColor(hex) {
-  var sliderColors = ['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff', '#ff0000']
+  var [r, g, b] = hexToRgb(hex)
   var x = 0
-  // Write your code here
+  if (r == 255 && b == 0)
+    x = g / 255 / 6
+  if (r == 0 && g == 255)
+    x = b / 255 / 6 + 2 / 6
+  if (g == 0 && b == 255)
+    x = r / 255 / 6 + 4 / 6
+  if (g == 255 && b == 0)
+    x = - r / 255 / 6 + 2 / 6
+  if (r == 0 && b == 255)
+    x = - g / 255 / 6 + 4 / 6
+  if (r == 255 && g == 0)
+    x = - b / 255 / 6 + 6 / 6
   return x
 }
 
@@ -45,7 +58,7 @@ function colorToPureColor(hex) {
   if (sum(rgb) == 0)
     return '#ffffff'
   rgb = rgb.map(c => {
-    return Math.round(c * 250 / Math.max(...rgb))
+    return Math.round(c * 255 / Math.max(...rgb))
   })
   // HACK: rgbToHex(...rgb) not working, and i have no idea of it.
   return rgbToHex.apply(null, rgb)
@@ -87,6 +100,36 @@ function getColorPosition(hex) {
     x,
     y
   }
+}
+
+/**
+ * Get color value of one channel by pointer position in slider
+ *
+ * @param   {number} x        from 0 to 1
+ * @param   {number} channel  one of ['r', 'g', 'b']
+ * @return  {string}          hex
+ */
+function getColorOfOneChannelByPointerPositionInSlider(x, channel) {
+  // map all channels to green channel
+  switch(channel) {
+    case 'r':
+      x += 2/6
+      x = x > 1 ? x - 1 : x
+    case 'g':
+      break
+    case 'b':
+      x += 4/6
+      x = x > 1 ? x - 1 : x
+    default:
+      break
+  }
+  if (x < 1/6)
+    return Math.floor(x * 6 * 256)
+  if (1/6 <= x && x <= 3 / 6)
+    return 255
+  if (3/6 < x && x < 4 / 6)
+    return Math.floor((4 / 6 - x) * 6 * 256)
+  return 0
 }
 
 function rgbToHex(r, g, b) {
