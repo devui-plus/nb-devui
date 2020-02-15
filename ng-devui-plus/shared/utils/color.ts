@@ -24,7 +24,6 @@ function getColorByPointerPositionInSlider(x) {
  * @return  {number}          from 0 to 1
  */
 function getPointerPositionInSliderByColor(hex) {
-  console.log(hex)
   var [r, g, b] = hexToRgb(hex)
   var x = 0
   if (r == 255 && b == 0)
@@ -59,7 +58,7 @@ function colorToPureColor(hex) {
   if (sum(rgb) == 0)
     return '#ffffff'
   rgb = rgb.map(c => {
-    return Math.round(c * 250 / Math.max(...rgb))
+    return Math.round(c * 255 / Math.max(...rgb))
   })
   // HACK: rgbToHex(...rgb) not working, and i have no idea of it.
   return rgbToHex.apply(null, rgb)
