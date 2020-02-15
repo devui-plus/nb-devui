@@ -4,7 +4,7 @@
     <d-recent-color #recentColor
       [color]="color"
       [limit]="8"
-      (colorChange)="doColorChange($event)"
+      (send)="receiveColor($event)"
     ></d-recent-color>
     <div class="color-panel">
       <div class="title">
@@ -15,7 +15,7 @@
       <div class="color-cubes" *ngIf="'basic' === selectedPanel"> 
         <d-basic-color
           [basicColors]="basicColors" 
-          (colorChange)="doColorChange($event)"
+          (send)="receiveColor($event)"
         ></d-basic-color>
       </div>
       <div *ngIf="'more' === selectedPanel">
@@ -26,10 +26,10 @@
       </div>
     </div>
     <hr>
-    <div class="control">
-      <d-color-cube [color]="color" [size]="30" (click)="setColor(color)"></d-color-cube>
-      <d-color-input [color]="color" (colorChange)="doColorChange($event)"></d-color-input>
-      <button (click)="recentColor.saveRecentlyUsed(); doConfirm()">确认</button>
-    </div>
+    <d-color-input
+      [color]="color"
+      (confirm)="doConfirm($event)"
+      (send)="receiveColor($event)"
+    ></d-color-input>
   </div>
 </div>

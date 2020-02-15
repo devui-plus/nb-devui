@@ -8,12 +8,12 @@ import { Input,Output,EventEmitter } from '@angular/core';
 })
 export class BasicColorComponent implements OnInit {
   @Input() basicColors;
-  @Output() colorChange = new EventEmitter();
+  @Output() send = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
   sendColor(color) {
-    this.colorChange.emit(color);
+    this.send.emit(color);
   }
 }

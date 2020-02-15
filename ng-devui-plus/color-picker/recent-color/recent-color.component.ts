@@ -10,7 +10,7 @@ import { saveRecentColors } from '../../shared/utils';
 export class RecentColorComponent implements OnInit {
   @Input() color;
   @Input() limit: number;
-  @Output() colorChange = new EventEmitter();
+  @Output() send = new EventEmitter();
   recentlyUsed: Array<string> = ['#fff'];
 
   constructor() { }
@@ -38,6 +38,6 @@ export class RecentColorComponent implements OnInit {
   }
 
   sendColor(color) {
-    this.colorChange.emit(color);
+    this.send.emit(color);
   }
 }
