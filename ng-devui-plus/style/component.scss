@@ -3,6 +3,7 @@
 @mixin color-cube {
     .color-cube {
         display: inline-block;
+        margin: 0 6px 6px 0;
         vertical-align: bottom;
         border: 1px solid $gray2;
     }

@@ -1,18 +1,11 @@
 <div class="container" *ngIf="!hide">
   <div class="cancel-mask" (click)="cancel.emit()"></div>
   <div class="color-picker">
-    <div class="recently-used">
-      <div class="title">最近使用颜色</div>
-      <div class="color-cubes">
-        <app-color-cube
-          class="color-cube"
-          [size]="20"
-          [ngStyle]="{'background-color': color}"
-          *ngFor="let color of recentlyUsed" 
-          (click)="setColor(color)"
-        ></app-color-cube>
-      </div>
-    </div>
+    <d-recent-color #recentColor
+      [color]="color"
+      [limit]="8"
+      (colorChange)="doColorChange($event)"
+    ></d-recent-color>
     <div class="color-panel">
       <div class="title">
         <span [class.selected]="'basic' === selectedPanel" (click)="selectPanel('basic')">基本色</span>
@@ -30,7 +23,7 @@
     <div class="control">
       <app-color-cube [color]="color" [size]="30" (click)="setColor(color)"></app-color-cube>
       <d-color-input [color]="color" (colorChange)="doColorChange($event)"></d-color-input>
-      <button (click)="doConfirm()">确认</button>
+      <button (click)="recentColor.saveRecentlyUsed(); doConfirm()">确认</button>
     </div>
   </div>
 </div>
