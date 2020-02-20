@@ -33,8 +33,7 @@ export class RecentColorComponent implements OnInit {
   }
 
   clearColor() {
-    this.recentlyUsed = []
-    this.saveToLocalData()
+    this.sendColor('')
   }
 
   sendColor(color) {
