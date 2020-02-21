@@ -17,10 +17,17 @@ export class ColorInputComponent implements OnInit {
   }
 
   inputChange() {
-    this.send.emit(this.color)
+    if (this.checkColor())
+      this.send.emit(this.color)
   }
 
   doConfirm() {
-    this.confirm.emit(this.color)
+    if (this.checkColor())
+      this.confirm.emit(this.color)
+  }
+
+  checkColor() {
+    var re = /^|#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/
+    return re.test(this.color)
   }
 }

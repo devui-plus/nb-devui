@@ -11,6 +11,7 @@ export class RecentColorComponent implements OnInit {
   @Input() color;
   @Input() limit: number;
   @Output() send = new EventEmitter();
+  @Output() confirm = new EventEmitter();
   recentlyUsed: Array<string> = ['#fff'];
 
   constructor() { }
@@ -33,11 +34,13 @@ export class RecentColorComponent implements OnInit {
   }
 
   clearColor() {
-    this.recentlyUsed = []
-    this.saveToLocalData()
+    this.send.emit('')
   }
 
-  sendColor(color) {
-    this.send.emit(color);
+  doConfirm(color) {
+    this.color = color
+    this.saveRecentlyUsed()
+    this.send.emit(color)
+    this.confirm.emit()
   }
 }
