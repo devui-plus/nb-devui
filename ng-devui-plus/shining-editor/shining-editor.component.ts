@@ -1,4 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import Quill from 'quill';
+import katex from 'katex';
+const win: any = window;
+win.katex = katex;
 
 @Component({
   selector: 'd-shining-editor',
@@ -11,6 +15,20 @@ export class ShiningEditorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.editor = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        formula: true,
+	toolbar:{
+          container: [
+            [{ header: ['1', '2', '3', false] }],
+            ['bold', 'italic', 'underline', 'link'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            ['clean', 'formula']
+	  ]
+        }
+      }
+    });
   }
 
   save() {
