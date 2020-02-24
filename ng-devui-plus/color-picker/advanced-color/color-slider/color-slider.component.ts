@@ -27,7 +27,7 @@ export class ColorSliderComponent implements OnInit {
       (setter) => {
         if (setter === 'colorInput') {
           this.color = this.colorPickerService.getColor()
-          this.initPanel()
+          this.initPointerPosition()
         }
       }
     )
@@ -36,6 +36,7 @@ export class ColorSliderComponent implements OnInit {
   ngOnInit() {
     this.color = this.colorPickerService.getColor();
     this.initPanel()
+    this.initPointerPosition()
   }
 
   initPanel() {
@@ -53,15 +54,17 @@ export class ColorSliderComponent implements OnInit {
       top,
       height: panel.offsetHeight
     }
-    // init pointer position
+    // HACK: 这里计算offsetleft的时候把自己的高度也算进去了，不知道为什么
+    this.panel.top -= this.panel.height
+  }
+
+  initPointerPosition() {
     var position = getPointerPositionInSliderByColor(colorToPureColor(this.color))
     this.pointer.top = position * this.panel.height
   }
 
   mouseClick(event: MouseEvent) {
     this.pointer.top = event.clientY - this.panel.top
-    // HACK: sometimes the top minus the height, sometimes not
-    this.pointer.top = (this.pointer.top + this.panel.height) % this.panel.height
     this.getPureColor()
   }
 
@@ -73,8 +76,6 @@ export class ColorSliderComponent implements OnInit {
     if (!this.dragging)
       return
     this.pointer.top = event.clientY - this.panel.top
-    // HACK: sometimes the top minus the height, sometimes not
-    this.pointer.top = (this.pointer.top + this.panel.height) % this.panel.height
     // Edge detection
     if (this.pointer.top < 0) {
       this.pointer.top = 0
