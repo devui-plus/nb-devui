@@ -1,6 +1,10 @@
 <div class="container" *ngIf="!hide">
   <div class="cancel-mask" (click)="cancel.emit()"></div>
-  <div class="color-picker">
+  <div class="color-picker" 
+    (mousemove)="mouseMove($event)"
+    (mouseup)="mouseUp()"
+    (mouseleave)="mouseUp()"
+  >
     <d-recent-color
       [limit]="8"
       (confirm)="doConfirm($event)"

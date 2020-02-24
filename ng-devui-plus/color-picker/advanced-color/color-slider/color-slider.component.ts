@@ -33,6 +33,12 @@ export class ColorSliderComponent implements OnInit {
         }
       }
     )
+    this.colorPickerService.onRootMouseMove.subscribe(
+      (event) => this.mouseMove(event)
+    )
+    this.colorPickerService.onRootMouseUp.subscribe(
+      () => this.mouseUp()
+    )
   }
 
   ngOnInit() {

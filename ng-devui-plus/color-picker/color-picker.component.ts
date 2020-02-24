@@ -34,6 +34,14 @@ export class ColorPickerComponent implements OnInit {
     this.selectedPanel = panel
   }
 
+  mouseMove(event: MouseEvent) {
+    this.colorPickerService.onRootMouseMove.emit(event)
+  }
+
+  mouseUp() {
+    this.colorPickerService.onRootMouseUp.emit()
+  }
+  
   doConfirm() {
     this.colorPickerService.saveRecentColor.emit()
     this.confirm.emit(this.color)

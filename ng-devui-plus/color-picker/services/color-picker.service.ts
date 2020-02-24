@@ -8,6 +8,8 @@ export class ColorPickerService {
   updateColor = new EventEmitter<string>();
   updatePureColor = new EventEmitter<void>();
   saveRecentColor = new EventEmitter<void>();
+  onRootMouseMove = new EventEmitter<MouseEvent>();
+  onRootMouseUp = new EventEmitter<void>();
 
   constructor() { }
 
