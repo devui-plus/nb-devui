@@ -27,6 +27,8 @@ export class ColorSliderComponent implements OnInit {
       (setter) => {
         if (setter === 'colorInput') {
           this.color = this.colorPickerService.getColor()
+          if (this.color === '') // input cleared color
+            return
           this.initPointerPosition()
         }
       }
@@ -35,6 +37,9 @@ export class ColorSliderComponent implements OnInit {
 
   ngOnInit() {
     this.color = this.colorPickerService.getColor();
+    if (this.color === '') { // make red as default
+      this.color = '#ff0000'
+    }
     this.initPanel()
     this.initPointerPosition()
   }

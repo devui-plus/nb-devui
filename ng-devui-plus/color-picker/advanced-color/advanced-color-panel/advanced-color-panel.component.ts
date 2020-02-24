@@ -30,6 +30,8 @@ export class AdvancedColorPanelComponent implements OnInit {
       (setter) => {
         if (setter === 'colorInput') {
           this.color = this.colorPickerService.getColor();
+          if (this.color === '') // input cleared color
+            return
           this.getPureColor()
           this.initPointerPosition()
         }
@@ -45,6 +47,9 @@ export class AdvancedColorPanelComponent implements OnInit {
 
   ngOnInit() {
     this.color = this.colorPickerService.getColor();
+    if (this.color === '') { // make red as default
+      this.color = '#ff0000'
+    }
     this.getPureColor()
     this.initPanel()
     this.initPointerPosition()
