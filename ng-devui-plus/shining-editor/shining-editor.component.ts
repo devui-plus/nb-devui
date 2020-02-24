@@ -3,6 +3,8 @@ import Quill from 'quill';
 import katex from 'katex';
 const win: any = window;
 win.katex = katex;
+import Counter from './modules/counter';
+Quill.register('modules/counter', Counter);
 
 @Component({
   selector: 'd-shining-editor',
@@ -16,17 +18,29 @@ export class ShiningEditorComponent implements OnInit {
 
   ngOnInit() {
     this.editor = new Quill('#editor', {
-      theme: 'snow',
+      theme: 'snow', // bubble
       modules: {
         formula: true,
-	toolbar:{
-          container: [
-            [{ header: ['1', '2', '3', false] }],
-            ['bold', 'italic', 'underline', 'link'],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            ['clean', 'formula']
-	  ]
-        }
+	      toolbar: [
+          [{ header: ['1', '2', '3', false] }],
+          ['bold', 'italic', 'underline', 'strike', 'link'],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          ['clean', 'formula']
+        ],
+        keyboard: {
+          bindings: {
+            strike: {
+              key: 'S',
+              ctrlKey: true,
+              shiftKey: true,
+              handler: function(range) {
+                const format = this.quill.getFormat(range);
+                this.quill.format('strike', !format.strike);
+              }
+            },
+          }
+        },
+        counter: true
       }
     });
   }
