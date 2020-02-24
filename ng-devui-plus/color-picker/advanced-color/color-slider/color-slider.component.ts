@@ -24,9 +24,11 @@ export class ColorSliderComponent implements OnInit {
     private colorPickerService: ColorPickerService
   ) {
     this.colorPickerService.updateColor.subscribe(
-      () => {
-        this.color = this.colorPickerService.getColor()
-        this.initPanel()
+      (setter) => {
+        if (setter === 'colorInput') {
+          this.color = this.colorPickerService.getColor()
+          this.initPanel()
+        }
       }
     )
   }

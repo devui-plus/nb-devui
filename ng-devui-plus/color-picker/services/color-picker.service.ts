@@ -5,7 +5,7 @@ import { EventEmitter } from '@angular/core';
 export class ColorPickerService {
   color: string = '';
   pureColor: string = '#ff0000';
-  updateColor = new EventEmitter<void>();
+  updateColor = new EventEmitter<string>();
   updatePureColor = new EventEmitter<void>();
   saveRecentColor = new EventEmitter<void>();
 
@@ -19,11 +19,12 @@ export class ColorPickerService {
     return this.pureColor;
   }
 
-  setColor(color) {
+  // setter is who set the color, default as ''
+  setColor(color, setter: string = 'normal') {
     var changed = this.color !== color
     this.color = color;
     if (changed)
-      this.updateColor.emit();
+      this.updateColor.emit(setter);
   }
 
   setPureColor(color) {

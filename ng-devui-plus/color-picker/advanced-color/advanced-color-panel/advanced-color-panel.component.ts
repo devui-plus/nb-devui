@@ -27,9 +27,12 @@ export class AdvancedColorPanelComponent implements OnInit {
     private colorPickerService: ColorPickerService
   ) {
     this.colorPickerService.updateColor.subscribe(
-      () => {
-        this.color = this.colorPickerService.getColor();
-        this.getPureColor()
+      (setter) => {
+        if (setter === 'colorInput') {
+          this.color = this.colorPickerService.getColor();
+          this.getPureColor()
+          this.initPanel()
+        }
       }
     )
     this.colorPickerService.updatePureColor.subscribe(
@@ -108,7 +111,6 @@ export class AdvancedColorPanelComponent implements OnInit {
 
   getColor() {
     this.color = getColorByPosition(this.pureColor, this.pointer.left/this.panel.width, this.pointer.top/this.panel.height)
-    this.getPureColor()
     this.colorPickerService.setColor(this.color)
   }
 

@@ -27,7 +27,7 @@ export class ColorInputComponent implements OnInit {
 
   inputChange() {
     if (this.checkColor())
-      this.colorPickerService.setColor(this.color)
+      this.colorPickerService.setColor(this.color, 'colorInput')
   }
 
   doConfirm() {
