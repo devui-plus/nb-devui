@@ -25,6 +25,6 @@ export class DevUIPlusModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: DevUIPlusModule
-    }
+    };
   }
 }

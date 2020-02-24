@@ -15,9 +15,9 @@ export class AdvancedColorComponent implements OnInit {
   ) {
     this.colorPickerService.updateColor.subscribe(
       () => {
-        this.color = this.colorPickerService.getColor()
+        this.color = this.colorPickerService.getColor();
       }
-    )
+    );
   }
 
   ngOnInit() {
@@ -25,6 +25,6 @@ export class AdvancedColorComponent implements OnInit {
   }
 
   receivePureColor(pureColor) {
-    this.pureColor = pureColor
+    this.pureColor = pureColor;
   }
 }

@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./inline-splitter.component.scss']
 })
 export class InlineSplitterComponent implements OnInit {
-  @Input() height: string = '25px';
-  @Input() color: string = '#ccc';
-  @Input() margin: string = '0 8px';
+  @Input() height = '25px';
+  @Input() color = '#ccc';
+  @Input() margin = '0 8px';
 
   constructor() { }
 

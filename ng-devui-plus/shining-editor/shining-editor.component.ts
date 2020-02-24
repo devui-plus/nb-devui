@@ -36,22 +36,22 @@ export class ShiningEditorComponent implements OnInit {
 
     /**
      * 富文本编辑器 Web API 参考
-     * 
+     *
      * Document.execCommand()
      * https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand
-     * 
+     *
      * queryCommandState(String command)
      * https://developer.mozilla.org/zh-CN/docs/Web/API/Document/queryCommandState
-     * 
+     *
      * HTMLElement.contentEditable
      * https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/contentEditable
-     * 
+     *
      * Window.getSelection
      * https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getSelection
-     * 
+     *
      * Selection
      * https://developer.mozilla.org/zh-CN/docs/Web/API/Selection
-     * 
+     *
      * List of contenteditable Browser Inconsistencies
      * https://github.com/guardian/scribe/blob/master/BROWSERINCONSISTENCIES.md
      */
@@ -59,7 +59,7 @@ export class ShiningEditorComponent implements OnInit {
     /**
      * Command Name
      * https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand
-     * 
+     *
      * backColor
      * bold
      * ClearAuthenticationCache
