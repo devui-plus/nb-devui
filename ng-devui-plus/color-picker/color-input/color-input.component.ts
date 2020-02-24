@@ -16,9 +16,9 @@ export class ColorInputComponent implements OnInit {
   ) {
     this.colorPickerService.updateColor.subscribe(
       () => {
-        this.color = this.colorPickerService.getColor()
+        this.color = this.colorPickerService.getColor();
       }
-    )
+    );
   }
 
   ngOnInit() {
@@ -26,17 +26,19 @@ export class ColorInputComponent implements OnInit {
   }
 
   inputChange() {
-    if (this.checkColor())
-      this.colorPickerService.setColor(this.color, 'colorInput')
+    if (this.checkColor()) {
+      this.colorPickerService.setColor(this.color, 'colorInput');
+    }
   }
 
   doConfirm() {
-    if (this.checkColor())
-      this.confirm.emit(this.color)
+    if (this.checkColor()) {
+      this.confirm.emit(this.color);
+    }
   }
 
   checkColor() {
-    var re = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/
-    return re.test(this.color) || this.color.length == 0
+    const re = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/;
+    return re.test(this.color) || this.color.length === 0;
   }
 }

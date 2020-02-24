@@ -9,8 +9,8 @@ import { Input } from '@angular/core';
 export class ColorCubeComponent implements OnInit {
   @Input() color;
   @Input() size;
-  
-  constructor() { 
+
+  constructor() {
 
   }
 

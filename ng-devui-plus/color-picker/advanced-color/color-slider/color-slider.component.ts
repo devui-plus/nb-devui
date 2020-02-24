@@ -13,12 +13,12 @@ export class ColorSliderComponent implements OnInit {
   panel = {
     top: 0,
     height: 0
-  }
+  };
   pointer = {
     top: 0,
     color: '#fff'
-  }
-  dragging: boolean = false;
+  };
+  dragging = false;
 
   constructor(
     private colorPickerService: ColorPickerService
@@ -26,55 +26,58 @@ export class ColorSliderComponent implements OnInit {
     this.colorPickerService.updateColor.subscribe(
       (setter) => {
         if (setter === 'colorInput') {
-          this.color = this.colorPickerService.getColor()
-          if (this.color === '') // input cleared color
-            return
-          this.initPointerPosition()
+          this.color = this.colorPickerService.getColor();
+          if (this.color === '') { // input cleared color
+            return;
+          }
+          this.initPointerPosition();
         }
       }
-    )
+    );
     this.colorPickerService.onRootMouseMove.subscribe(
       (event) => this.mouseMove(event)
-    )
+    );
     this.colorPickerService.onRootMouseUp.subscribe(
       () => this.mouseUp()
-    )
+    );
   }
 
   ngOnInit() {
     this.color = this.colorPickerService.getColor();
     if (this.color === '') { // make red as default
-      this.color = '#ff0000'
+      this.color = '#ff0000';
     }
-    this.initPanel()
-    this.initPointerPosition()
+    this.initPanel();
+    this.initPointerPosition();
   }
 
   initPanel() {
-    let panel = document.getElementsByClassName('color-slider')[0] as HTMLElement
-    if (panel === undefined) // color changed not in basic panel
-      return
-    let top = panel.offsetTop // before the advanced panel pointer drags, it contains the height of itself
-    let parent = panel
-    while((parent = parent.offsetParent as HTMLElement)) {
-      top += parent.offsetTop
-      if (parent == document.body as HTMLElement)
-        break
+    const panel = document.getElementsByClassName('color-slider')[0] as HTMLElement;
+    if (panel === undefined) { // color changed not in basic panel
+      return;
+    }
+    let top = panel.offsetTop; // before the advanced panel pointer drags, it contains the height of itself
+    let parent = panel;
+    while ((parent = parent.offsetParent as HTMLElement)) {
+      top += parent.offsetTop;
+      if (parent === document.body as HTMLElement) {
+        break;
+      }
     }
     this.panel = {
       top,
       height: panel.offsetHeight
-    }
+    };
   }
 
   initPointerPosition() {
-    var position = getPointerPositionInSliderByColor(colorToPureColor(this.color))
-    this.pointer.top = position * this.panel.height
+    const position = getPointerPositionInSliderByColor(colorToPureColor(this.color));
+    this.pointer.top = position * this.panel.height;
   }
 
   mouseClick(event: MouseEvent) {
-    this.pointer.top = event.clientY - this.panel.top
-    this.getPureColor()
+    this.pointer.top = event.clientY - this.panel.top;
+    this.getPureColor();
   }
 
   mouseDown() {
@@ -82,22 +85,23 @@ export class ColorSliderComponent implements OnInit {
   }
 
   mouseMove(event: MouseEvent) {
-    if (!this.dragging)
-      return
-    this.pointer.top = event.clientY - this.panel.top
+    if (!this.dragging) {
+      return;
+    }
+    this.pointer.top = event.clientY - this.panel.top;
     // Edge detection
     if (this.pointer.top < 0) {
-      this.pointer.top = 0
+      this.pointer.top = 0;
     }
     if (this.pointer.top > this.panel.height) {
-      this.pointer.top = this.panel.height
+      this.pointer.top = this.panel.height;
     }
-    this.getPureColor()
+    this.getPureColor();
   }
 
   getPureColor() {
-    var pureColor = getColorByPointerPositionInSlider(this.pointer.top/this.panel.height)
-    this.colorPickerService.setPureColor(pureColor)
+    const pureColor = getColorByPointerPositionInSlider(this.pointer.top / this.panel.height);
+    this.colorPickerService.setPureColor(pureColor);
   }
 
   mouseUp() {
