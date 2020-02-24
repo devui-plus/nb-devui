@@ -1,6 +1,6 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { colorToPureColor, getColorByPosition, getColorPosition } from '../../../shared/utils/color';
+import { ColorPickerService } from '../../services/color-picker.service';
 
 @Component({
   selector: 'd-advanced-color-panel',
@@ -8,9 +8,8 @@ import { colorToPureColor, getColorByPosition, getColorPosition } from '../../..
   styleUrls: ['./advanced-color-panel.component.scss']
 })
 export class AdvancedColorPanelComponent implements OnInit {
-  @Input() color;
-  @Input() pureColor;
-  @Output() send = new EventEmitter();
+  color: string;
+  pureColor: string;
   panel = {
     top: 0,
     left: 0,
@@ -24,20 +23,27 @@ export class AdvancedColorPanelComponent implements OnInit {
   }
   dragging: boolean = false;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.getPureColor()
-    this.initPanel()
+  constructor(
+    private colorPickerService: ColorPickerService
+  ) {
+    this.colorPickerService.updateColor.subscribe(
+      () => {
+        this.color = this.colorPickerService.getColor();
+        this.getPureColor()
+      }
+    )
+    this.colorPickerService.updatePureColor.subscribe(
+      () => {
+        this.pureColor = this.colorPickerService.getPureColor()
+        this.getColor()
+      }
+    )
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.pureColor && (changes.pureColor.previousValue != changes.pureColor.currentValue)) {
-      // To resolve the ExpressionChangedAfterItHasBeenCheckedError
-      setTimeout(() => {
-        this.getColor()
-      }, 100);
-    }
+  ngOnInit() {
+    this.color = this.colorPickerService.getColor();
+    this.getPureColor()
+    this.initPanel()
   }
 
   getPureColor() {
@@ -102,7 +108,8 @@ export class AdvancedColorPanelComponent implements OnInit {
 
   getColor() {
     this.color = getColorByPosition(this.pureColor, this.pointer.left/this.panel.width, this.pointer.top/this.panel.height)
-    this.send.emit(this.color)
+    this.getPureColor()
+    this.colorPickerService.setColor(this.color)
   }
 
   mouseUp() {

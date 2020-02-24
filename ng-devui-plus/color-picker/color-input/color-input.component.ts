@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
+import { ColorPickerService } from '../services/color-picker.service';
 
 @Component({
   selector: 'd-color-input',
@@ -7,18 +8,26 @@ import { Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./color-input.component.scss']
 })
 export class ColorInputComponent implements OnInit {
-  @Input() color;
-  @Output() send = new EventEmitter();
+  color: string;
   @Output() confirm = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private colorPickerService: ColorPickerService
+  ) {
+    this.colorPickerService.updateColor.subscribe(
+      () => {
+        this.color = this.colorPickerService.getColor()
+      }
+    )
+  }
 
   ngOnInit() {
+    this.color = this.colorPickerService.getColor();
   }
 
   inputChange() {
     if (this.checkColor())
-      this.send.emit(this.color)
+      this.colorPickerService.setColor(this.color)
   }
 
   doConfirm() {
@@ -27,7 +36,7 @@ export class ColorInputComponent implements OnInit {
   }
 
   checkColor() {
-    var re = /^|#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/
-    return re.test(this.color)
+    var re = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/
+    return re.test(this.color) || this.color.length == 0
   }
 }

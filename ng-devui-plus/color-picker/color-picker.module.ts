@@ -10,6 +10,7 @@ import { DevUIModule } from 'ng-devui';
 import { FormsModule } from '@angular/forms';
 import { BasicColorComponent } from './basic-color/basic-color.component';
 import { RecentColorComponent } from './recent-color/recent-color.component';
+import { ColorPickerService } from './services/color-picker.service';
 
 @NgModule({
     imports: [
@@ -37,7 +38,9 @@ import { RecentColorComponent } from './recent-color/recent-color.component';
         BasicColorComponent,
         RecentColorComponent,
     ],
-    providers: [],
+    providers: [
+        ColorPickerService,
+    ],
 })
 export class ColorPickerModule {
 }
