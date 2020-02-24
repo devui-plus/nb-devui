@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { colorToPureColor, getColorByPointerPositionInSlider, getPointerPositionInSliderByColor } from '../../../shared/utils/color';
+import { ColorPickerService } from '../../services/color-picker.service';
 
 @Component({
   selector: 'd-color-slider',
@@ -8,9 +9,7 @@ import { colorToPureColor, getColorByPointerPositionInSlider, getPointerPosition
   styleUrls: ['./color-slider.component.scss']
 })
 export class ColorSliderComponent implements OnInit {
-  @Input() color;
-  @Output() send = new EventEmitter();
-  pureColor: string;
+  color: string;
   panel = {
     top: 0,
     height: 0
@@ -21,20 +20,41 @@ export class ColorSliderComponent implements OnInit {
   }
   dragging: boolean = false;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.getPureColor()
-    this.initPanel()
+  constructor(
+    private colorPickerService: ColorPickerService
+  ) {
+    this.colorPickerService.updateColor.subscribe(
+      (setter) => {
+        if (setter === 'colorInput') {
+          this.color = this.colorPickerService.getColor()
+          if (this.color === '') // input cleared color
+            return
+          this.initPointerPosition()
+        }
+      }
+    )
+    this.colorPickerService.onRootMouseMove.subscribe(
+      (event) => this.mouseMove(event)
+    )
+    this.colorPickerService.onRootMouseUp.subscribe(
+      () => this.mouseUp()
+    )
   }
 
-  getPureColor() {
-    this.pureColor = colorToPureColor(this.color)
+  ngOnInit() {
+    this.color = this.colorPickerService.getColor();
+    if (this.color === '') { // make red as default
+      this.color = '#ff0000'
+    }
+    this.initPanel()
+    this.initPointerPosition()
   }
 
   initPanel() {
     let panel = document.getElementsByClassName('color-slider')[0] as HTMLElement
-    let top = panel.offsetTop
+    if (panel === undefined) // color changed not in basic panel
+      return
+    let top = panel.offsetTop // before the advanced panel pointer drags, it contains the height of itself
     let parent = panel
     while((parent = parent.offsetParent as HTMLElement)) {
       top += parent.offsetTop
@@ -45,16 +65,16 @@ export class ColorSliderComponent implements OnInit {
       top,
       height: panel.offsetHeight
     }
-    // HACK: 这里计算offsetleft的时候把自己的高度也算进去了，不知道为什么
-    this.panel.top -= this.panel.height
-    // init pointer position
-    var position = getPointerPositionInSliderByColor(this.pureColor)
+  }
+
+  initPointerPosition() {
+    var position = getPointerPositionInSliderByColor(colorToPureColor(this.color))
     this.pointer.top = position * this.panel.height
   }
 
   mouseClick(event: MouseEvent) {
     this.pointer.top = event.clientY - this.panel.top
-    this.getColor()
+    this.getPureColor()
   }
 
   mouseDown() {
@@ -72,12 +92,12 @@ export class ColorSliderComponent implements OnInit {
     if (this.pointer.top > this.panel.height) {
       this.pointer.top = this.panel.height
     }
-    this.getColor()
+    this.getPureColor()
   }
 
-  getColor() {
-    this.pureColor = getColorByPointerPositionInSlider(this.pointer.top/this.panel.height)
-    this.send.emit(this.pureColor)
+  getPureColor() {
+    var pureColor = getColorByPointerPositionInSlider(this.pointer.top/this.panel.height)
+    this.colorPickerService.setPureColor(pureColor)
   }
 
   mouseUp() {

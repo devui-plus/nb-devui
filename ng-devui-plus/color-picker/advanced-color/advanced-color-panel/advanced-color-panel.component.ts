@@ -1,6 +1,6 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { colorToPureColor, getColorByPosition, getColorPosition } from '../../../shared/utils/color';
+import { ColorPickerService } from '../../services/color-picker.service';
 
 @Component({
   selector: 'd-advanced-color-panel',
@@ -8,9 +8,8 @@ import { colorToPureColor, getColorByPosition, getColorPosition } from '../../..
   styleUrls: ['./advanced-color-panel.component.scss']
 })
 export class AdvancedColorPanelComponent implements OnInit {
-  @Input() color;
-  @Input() pureColor;
-  @Output() send = new EventEmitter();
+  color: string;
+  pureColor: string;
   panel = {
     top: 0,
     left: 0,
@@ -24,20 +23,42 @@ export class AdvancedColorPanelComponent implements OnInit {
   }
   dragging: boolean = false;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.getPureColor()
-    this.initPanel()
+  constructor(
+    private colorPickerService: ColorPickerService
+  ) {
+    this.colorPickerService.updateColor.subscribe(
+      (setter) => {
+        if (setter === 'colorInput') {
+          this.color = this.colorPickerService.getColor();
+          if (this.color === '') // input cleared color
+            return
+          this.getPureColor()
+          this.initPointerPosition()
+        }
+      }
+    )
+    this.colorPickerService.updatePureColor.subscribe(
+      () => {
+        this.pureColor = this.colorPickerService.getPureColor()
+        this.getColor()
+      }
+    )
+    this.colorPickerService.onRootMouseMove.subscribe(
+      (event) => this.mouseMove(event)
+    )
+    this.colorPickerService.onRootMouseUp.subscribe(
+      () => this.mouseUp()
+    )
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.pureColor && (changes.pureColor.previousValue != changes.pureColor.currentValue)) {
-      // To resolve the ExpressionChangedAfterItHasBeenCheckedError
-      setTimeout(() => {
-        this.getColor()
-      }, 100);
+  ngOnInit() {
+    this.color = this.colorPickerService.getColor();
+    if (this.color === '') { // make red as default
+      this.color = '#ff0000'
     }
+    this.getPureColor()
+    this.initPanel()
+    this.initPointerPosition()
   }
 
   getPureColor() {
@@ -61,9 +82,9 @@ export class AdvancedColorPanelComponent implements OnInit {
       width: panel.offsetWidth,
       height: panel.offsetHeight
     }
-    // HACK: 这里计算offsetleft的时候把自己的高度也算进去了，不知道为什么
-    this.panel.top -= this.panel.height
-    // init pointer position
+  }
+
+  initPointerPosition() {
     var position = getColorPosition(this.color)
     this.pointer.left = position.x * this.panel.width
     this.pointer.top = position.y * this.panel.height
@@ -102,7 +123,7 @@ export class AdvancedColorPanelComponent implements OnInit {
 
   getColor() {
     this.color = getColorByPosition(this.pureColor, this.pointer.left/this.panel.width, this.pointer.top/this.panel.height)
-    this.send.emit(this.color)
+    this.colorPickerService.setColor(this.color)
   }
 
   mouseUp() {

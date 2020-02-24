@@ -1,10 +1,12 @@
 <div class="container" *ngIf="!hide">
   <div class="cancel-mask" (click)="cancel.emit()"></div>
-  <div class="color-picker">
-    <d-recent-color #recentColor
-      [color]="color"
+  <div class="color-picker" 
+    (mousemove)="mouseMove($event)"
+    (mouseup)="mouseUp()"
+    (mouseleave)="mouseUp()"
+  >
+    <d-recent-color
       [limit]="8"
-      (send)="receiveColor($event)"
       (confirm)="doConfirm($event)"
     ></d-recent-color>
     <div class="color-panel">
@@ -13,24 +15,18 @@
         |
         <span [class.selected]="'more' === selectedPanel" (click)="selectPanel('more')">更多颜色</span>
       </div>
+      <div *ngIf="'more' === selectedPanel">
+        <d-advanced-color></d-advanced-color>
+      </div>
       <div class="color-cubes" *ngIf="'basic' === selectedPanel"> 
         <d-basic-color
-          [basicColors]="basicColors" 
-          (send)="receiveColor($event)"
+          [basicColors]="basicColors"
         ></d-basic-color>
-      </div>
-      <div *ngIf="'more' === selectedPanel">
-        <app-advanced-color
-          [color]="color"
-          (send)="receiveColor($event)"
-        ></app-advanced-color>
       </div>
     </div>
     <hr>
     <d-color-input
-      [color]="color"
       (confirm)="doConfirm($event)"
-      (send)="receiveColor($event)"
     ></d-color-input>
   </div>
 </div>

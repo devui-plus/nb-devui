@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input,Output,EventEmitter } from '@angular/core';
 import { saveRecentColors } from '../../shared/utils';
+import { ColorPickerService } from '../services/color-picker.service';
 
 @Component({
   selector: 'd-recent-color',
@@ -8,16 +9,29 @@ import { saveRecentColors } from '../../shared/utils';
   styleUrls: ['./recent-color.component.scss']
 })
 export class RecentColorComponent implements OnInit {
-  @Input() color;
+  color: string;
   @Input() limit: number;
-  @Output() send = new EventEmitter();
   @Output() confirm = new EventEmitter();
-  recentlyUsed: Array<string> = ['#fff'];
+  recentlyUsed: Array<string> = [];
 
-  constructor() { }
+  constructor(
+    private colorPickerService: ColorPickerService
+  ) {
+    this.colorPickerService.updateColor.subscribe(
+      () => {
+        this.color = this.colorPickerService.getColor()
+      }
+    )
+    this.colorPickerService.saveRecentColor.subscribe(
+      () => {
+        this.saveRecentlyUsed()
+      }
+    )
+  }
 
   ngOnInit() {
     this.loadFromLocalData()
+    this.color = this.colorPickerService.getColor();
   }
   
   loadFromLocalData() {
@@ -34,13 +48,12 @@ export class RecentColorComponent implements OnInit {
   }
 
   clearColor() {
-    this.send.emit('')
+    this.colorPickerService.setColor('')
   }
 
   doConfirm(color) {
-    this.color = color
+    this.colorPickerService.setColor(color)
     this.saveRecentlyUsed()
-    this.send.emit(color)
     this.confirm.emit()
   }
 }
