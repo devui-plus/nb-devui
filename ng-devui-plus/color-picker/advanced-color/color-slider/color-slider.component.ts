@@ -54,8 +54,6 @@ export class ColorSliderComponent implements OnInit {
       top,
       height: panel.offsetHeight
     }
-    // HACK: 这里计算offsetleft的时候把自己的高度也算进去了，不知道为什么
-    this.panel.top -= this.panel.height
   }
 
   initPointerPosition() {
