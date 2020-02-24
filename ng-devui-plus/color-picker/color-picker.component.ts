@@ -34,11 +34,6 @@ export class ColorPickerComponent implements OnInit {
     this.selectedPanel = panel
   }
 
-  receiveColor(color) {
-    this.colorPickerService.setColor(color)
-    this.send.emit(this.color)
-  }
-  
   doConfirm() {
     this.colorPickerService.saveRecentColor.emit()
     this.confirm.emit(this.color)
