@@ -140,6 +140,7 @@ function rgbToHex(r, g, b) {
 }
 
 function hexToRgb(hex) {
+  hex = hexColorSpread(hex)
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? [
     parseInt(result[1], 16),
@@ -154,6 +155,20 @@ function sum(nums) {
     sum += nums[i]
   }
   return sum
+}
+
+/**
+ * Spread hex color. e.g. '#fff' => '#ffffff'
+ */
+function hexColorSpread(color: string) {
+  var colorArr = color.split('')
+  if (colorArr.length == 4) {
+    for (var i = 3; i > 0; i--) {
+      colorArr.splice(i, 0, colorArr[i])
+    }
+  }
+  color = colorArr.join('')
+  return color
 }
 
 export {
