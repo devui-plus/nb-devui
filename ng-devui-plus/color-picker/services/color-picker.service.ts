@@ -19,18 +19,17 @@ export class ColorPickerService {
     return this.pureColor;
   }
 
-  // setter is who set the color, default as ''
   setColor(color, setter: string = 'normal') {
-    var changed = this.color !== color
+    var oldColor = this.color
     this.color = color;
-    if (changed)
-      this.updateColor.emit(setter);
+    if (oldColor !== color)
+      this.updateColor.emit(setter); // setter is who set the color
   }
 
   setPureColor(color) {
-    var changed = this.pureColor !== color
+    var oldColor = this.pureColor
     this.pureColor = color;
-    if (changed)
+    if (oldColor !== color)
       this.updatePureColor.emit();
   }
 }
