@@ -1,5 +1,5 @@
 @import '../style/theme/color';
-@import '../style/component.scss';
+@import './style/mixins/component';
 
 .container {
     position: relative;

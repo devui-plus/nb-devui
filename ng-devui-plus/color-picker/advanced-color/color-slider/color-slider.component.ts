@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
-import { colorToPureColor, getColorByPointerPositionInSlider, getPointerPositionInSliderByColor } from '../../../shared/utils/color';
+import { colorToPureColor, getColorByPointerPositionInSlider, getPointerPositionInSliderByColor } from '../../utils/color';
 import { ColorPickerService } from '../../services/color-picker.service';
 
 @Component({
