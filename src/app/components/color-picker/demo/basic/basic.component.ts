@@ -16,19 +16,19 @@ export class BasicComponent implements OnInit {
   }
 
   showColorPicker() {
-    this.hideColorPicker = false
+    this.hideColorPicker = false;
   }
 
   onCancel() {
-    this.hideColorPicker = true
+    this.hideColorPicker = true;
   }
 
   receiveColor(color) {
-    this.backgroundColor = color
+    this.backgroundColor = color;
   }
 
   onConfirm(color) {
-    this.backgroundColor = color
-    this.hideColorPicker = true
+    this.backgroundColor = color;
+    this.hideColorPicker = true;
   }
 }
