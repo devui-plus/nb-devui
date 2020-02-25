@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lint:devui": "tslint -p ng-devui-plus/tsconfig.lint.json -c ng-devui-plus/tslint.json \"ng-devui-plus/**/*.ts\"",
+    "lint-fix:devui": "tslint --fix -p ng-devui-plus/tsconfig.lint.json -c ng-devui-plus/tslint.json \"ng-devui-plus/**/*.ts\"",
     "build:lib": "ng build --prod ng-devui-plus",
     "build:prod": "ng build --prod"
   },
