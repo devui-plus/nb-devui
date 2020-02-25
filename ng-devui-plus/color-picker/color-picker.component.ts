@@ -7,11 +7,12 @@ import { ColorPickerService } from './services/color-picker.service';
   styleUrls: ['./color-picker.component.scss']
 })
 export class ColorPickerComponent implements OnInit {
-  @Input() hide;
+  @Input() hide = false;
   @Input() color = '';
   @Output() cancel = new EventEmitter();
   @Output() send = new EventEmitter();
   @Output() confirm = new EventEmitter();
+  showDefault = false;
   selectedPanel = 'basic';
   basicColors: Array<string> = ['#ffffff', '#ffd7d5', '#ffdaa9', '#fffed5',
     '#d4fa00', '#73fcd6', '#a5c8ff', '#ffacd5', '#ff7faa', '#d6d6d6',
@@ -34,6 +35,7 @@ export class ColorPickerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.showDefault = !this.hide // when there is an input, the hide could be init as true, so show default
     this.colorPickerService.setColor(this.color);
   }
 
