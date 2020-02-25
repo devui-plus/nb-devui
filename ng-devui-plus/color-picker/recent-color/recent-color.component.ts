@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
-import { saveRecentColors } from '../../shared/utils';
+import { saveRecentColors } from '../utils/color';
 import { ColorPickerService } from '../services/color-picker.service';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { colorToPureColor, getColorByPosition, getColorPosition } from '../../../shared/utils/color';
+import { colorToPureColor, getColorByPosition, getColorPosition } from '../../utils/color';
 import { ColorPickerService } from '../../services/color-picker.service';
 
 @Component({
