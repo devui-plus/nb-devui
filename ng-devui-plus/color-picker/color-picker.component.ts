@@ -35,7 +35,7 @@ export class ColorPickerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showDefault = !this.hide // when there is an input, the hide could be init as true, so show default
+    this.showDefault = !this.hide; // when there is an input, the hide could be init as true, so show default
     this.colorPickerService.setColor(this.color);
   }
 
