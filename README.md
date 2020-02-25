@@ -7,7 +7,7 @@ The DevUI Plus contains several components of DevUI. DevUI Plus allows developer
 
 ## Components
 
-- [ ] ColorPicker 颜色选择组件
+- [x] ColorPicker 颜色选择组件
 - [ ] FluentSlider 轮播组件
 - [ ] ImagePreview 图片预览组件
 - [ ] SmartInput 输入组件
