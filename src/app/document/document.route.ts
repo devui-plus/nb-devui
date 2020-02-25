@@ -10,7 +10,7 @@ export const routesConfig = [
       name: 'ColorPicker',
       cnName: '颜色选择器',
       description: '颜色选择器用于更换选中元素的色彩。',
-      tmw: '当用户需要更换色块或元素背景的颜色时使用，需要注意必选参数。'
+      tmw: '当用户需要更换色块或元素背景的颜色时使用。'
     }
   },
 ];

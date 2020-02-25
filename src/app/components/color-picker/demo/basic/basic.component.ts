@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basic.component.scss']
 })
 export class BasicComponent implements OnInit {
-  backgroundColor: string = '#1daf68';
+  backgroundColor: string = '#0080ff';
   hideColorPicker: boolean = true;
   tab1acticeID = 'tab1';
 
