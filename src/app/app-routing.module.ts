@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'components',
-    loadChildren: './components/devui.module#DevUIPlusModule'
+    loadChildren: './document/document.module#DocumentModule'
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
