@@ -1,9 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   title = 'nb-devui';
@@ -15,19 +16,19 @@ export class AppComponent implements OnInit {
     children: [
       {
         title: 'ColorPicker 颜色选择',
-        link: '/components/color-picker/demo',
+        link: '/components/color-picker',
       },
       {
         title: 'FluentSlider 轮播',
-        link: '/components/fluent-slider/demo',
+        link: '/components/fluent-slider',
       }, 
       {
         title: 'ImagePreview 图片预览',
-        link: '/components/image-preview/demo',
+        link: '/components/image-preview',
       },
       {
         title: 'SmartInput 文本输入',
-        link: '/components/smart-input/demo',
+        link: '/components/smart-input',
       },
       {
         title: 'ShiningEditor 富文本',

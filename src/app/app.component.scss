@@ -1,4 +1,6 @@
-.container {
+@import "../../ng-devui-plus//style/theme/color";
+
+.app-container {
     height: 100vh;
     margin: 0;
     .header {
@@ -26,14 +28,15 @@
         width: calc(100% - 240px);
         height: calc(100% - 50px);
         background: white;
-        padding: 10px;
+        // padding: 0 60px;
+        // padding: 10px;
         &.fullwidth {
             width: 100%;
         }
     }
 }
 
-:host ::ng-deep .devui-accordion-menu {
+.devui-accordion-menu {
     box-shadow: none;
     & > li > .devui-accordion-item-title.over-flow-ellipsis {
         font-size: 12px;
@@ -52,5 +55,100 @@
             color: #5170ff;
             border-right: 2px solid #5170ff;
         }
+    }
+}
+
+.demo-container{
+    position: relative;
+    padding-bottom: 30px;
+    margin-top: 20px;
+}
+
+.demo-content {
+    margin-right: 200px;
+}
+
+.demo-example {
+    margin-bottom: 20px;
+}
+
+.demo-nav {
+    position: absolute;
+    height: 100%;
+    top:0;
+    right: 0;
+    width: 150px;
+    line-height: 24px;
+}
+
+.demo-nav .items {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.demo-nav .items>li:hover {
+    color: $focus1;
+}
+
+.demo-nav-active {
+    color: $focus1;
+}
+
+.demo-title {
+    font-size: 14px;
+    color: $dark1;
+    line-height: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.demo-text {
+    font-size: 14px;
+    color: $dark1;
+    line-height: 24px;
+}
+
+.readme {
+    .hljs{
+        background: transparent;
+    }
+    pre {
+        background-color: $white;
+        border: none;
+        code {
+            border: 1px solid #e9e9e9;
+            overflow-x: auto;
+        }
+    }
+    p {
+        margin: 1em 0;
+    }
+}
+
+.doc-viewer-container {
+    .main{
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .doc-viewer-container {
+        .main{
+            padding: 0 60px;
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .doc-viewer-container{
+        .main{
+            padding: 0 20%;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container .content {
+        padding: 0 10px;
     }
 }
