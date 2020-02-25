@@ -8,7 +8,7 @@ import { ColorPickerService } from './services/color-picker.service';
 })
 export class ColorPickerComponent implements OnInit {
   @Input() hide;
-  @Input() color;
+  @Input() color = '';
   @Output() cancel = new EventEmitter();
   @Output() send = new EventEmitter();
   @Output() confirm = new EventEmitter();
