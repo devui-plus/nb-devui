@@ -1,6 +1,6 @@
 <div class="container" *ngIf="!hide">
-  <div class="cancel-mask" (click)="cancel.emit()"></div>
-  <div class="color-picker" 
+  <div class="cancel-mask" [class.hide-mask]="showDefault" (click)="cancel.emit()"></div>
+  <div class="color-picker" [class.hide-shadow]="showDefault"
     (mousemove)="mouseMove($event)"
     (mouseup)="mouseUp()"
     (mouseleave)="mouseUp()"

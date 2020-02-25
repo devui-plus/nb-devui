@@ -11,6 +11,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+    &.hide-mask {
+        display: none;
+    }
 }
 
 .color-picker {
@@ -24,6 +27,9 @@
     box-shadow: 0px 4px 8px 0 rgba(41,48,64,0.2);
     z-index: 1000;
     background-color: white;
+    &.hide-shadow {
+        box-shadow: none;
+    }
     .recently-used{
         padding-left: 10px;
     }
