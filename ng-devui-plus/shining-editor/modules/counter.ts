@@ -12,6 +12,6 @@ class Counter {
         this.container.innerHTML = `当前字数：${char.length}`;
         });
     }
-  }
-  
-  export default Counter;
+}
+
+export default Counter;
