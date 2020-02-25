@@ -21,7 +21,7 @@ export class ShiningEditorComponent implements OnInit {
       theme: 'snow', // bubble
       modules: {
         formula: true,
-	      toolbar: [
+        toolbar: [
           [{ header: ['1', '2', '3', false] }],
           ['bold', 'italic', 'underline', 'strike', 'link'],
           [{ list: 'ordered' }, { list: 'bullet' }],
