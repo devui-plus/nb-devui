@@ -1,0 +1,14 @@
+<section>
+  <d-fluent-slider>
+    <d-fluent-slider-item *ngFor="let item of backgroundItems">
+      <div
+        class="background-item"
+        [ngStyle]="{
+          'background': item.background
+        }"
+      >
+        {{ item.content }}
+      </div>
+    </d-fluent-slider-item>
+  </d-fluent-slider>
+</section>
