@@ -1,3 +1,16 @@
-<p>
-  smart-input works!
-</p>
+<div class="devui-smart-input">
+    <input
+     #smartInput 
+     type="text"
+     class="smart-input"
+     [ngClass]="[size ? 'input-' + size  : '',clearable ? 'clearable' : '']"
+     [placeholder]="placeholder"
+     [disabled]="disabled"
+    >
+    <i 
+     class="smart-input-clear icon-close" 
+     [ngClass]="size ? 'input-clear-' + size : ''"
+     (click)="clearInput()"
+     *ngIf="clearable"
+    ></i>
+</div>
