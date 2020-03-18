@@ -1,4 +1,4 @@
-import {Component,OnInit,Input,Output,EventEmitter,ElementRef,Renderer2,ViewChild,forwardRef} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer2, ViewChild, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -16,7 +16,7 @@ export class SmartInputComponent implements ControlValueAccessor,OnInit {
   @Input() placeholder = "";
   @Input() disabled = false;
   @Input() clearable = false;
-  @Output() onClear = new EventEmitter<string>();
+  @Output() fieldClearEvent = new EventEmitter<string>();
   @ViewChild('smartInput') smartInputElement: ElementRef;
   private onChange = (_: any) => null;
   private onTouch = () => null;
@@ -42,6 +42,6 @@ export class SmartInputComponent implements ControlValueAccessor,OnInit {
 
   clearInput(text){
     this.renderer.setProperty(this.smartInputElement.nativeElement, 'value', '');
-    this.onClear.emit(text);
+    this.fieldClearEvent.emit(text);
   }
 }
