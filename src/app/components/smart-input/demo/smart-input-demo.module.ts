@@ -9,6 +9,7 @@ import { BasicComponent } from './basic/basic.component';
 import { DevUICodeboxModule } from '../../../../../ng-devui-plus/shared/devui-codebox';
 import { DevUIApiModule } from '../../../../../ng-devui-plus//shared/devui-api/devui-api.module';
 import { InputClearComponent } from './input-clear/input-clear.component';
+import { InputNgmodelComponent } from './ngmodel/ngmodel.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { InputClearComponent } from './input-clear/input-clear.component';
     SmartInputDemoComponent,
     BasicComponent,
     InputClearComponent,
+    InputNgmodelComponent,
   ],
   entryComponents: [
     SmartInputDemoComponent,

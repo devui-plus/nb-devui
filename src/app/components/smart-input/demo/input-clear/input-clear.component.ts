@@ -13,6 +13,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputClearComponent implements OnInit {
 
+  clearText(text){
+    console.log('已清除内容：'+text);
+  }
+
   constructor() { }
 
   ngOnInit() {
