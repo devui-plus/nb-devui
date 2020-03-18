@@ -6,6 +6,7 @@
            size='sm'
            clearable=true
            [placeholder]="'Small Input'"
+           (fieldClearEvent)="clearText($event)"
           ></d-smart-input>
       </div>
   </div>
@@ -15,6 +16,7 @@
           <d-smart-input
            clearable=true
            [placeholder]="'Standard Input'"
+           (fieldClearEvent)="clearText($event)"
           ></d-smart-input>
       </div>
   </div>
@@ -25,6 +27,7 @@
            size='lg'
            clearable=true
            [placeholder]="'Large Input'"
+           (fieldClearEvent)="clearText($event)"
           ></d-smart-input>
       </div>
   </div>

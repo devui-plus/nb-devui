@@ -10,6 +10,10 @@ export class SmartInputDemoComponent implements OnInit {
     {title: 'HTML', language: 'xml', code:  require('!!raw-loader!./basic/basic.component.html')},
     {title: 'TS', language: 'typescript', code:  require('!!raw-loader!./basic/basic.component.ts')}
   ];
+  ngmodelSource: Array<DevuiSourceData> = [
+    {title: 'HTML', language: 'xml', code:  require('!!raw-loader!./ngmodel/ngmodel.component.html')},
+    {title: 'TS', language: 'typescript', code:  require('!!raw-loader!./ngmodel/ngmodel.component.ts')}
+  ];
   clearSource: Array<DevuiSourceData> = [
     {title: 'HTML', language: 'xml', code:  require('!!raw-loader!./input-clear/input-clear.component.html')},
     {title: 'TS', language: 'typescript', code:  require('!!raw-loader!./input-clear/input-clear.component.ts')}

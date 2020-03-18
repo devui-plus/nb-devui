@@ -10,7 +10,7 @@
     <i 
      class="smart-input-clear icon-close" 
      [ngClass]="size ? 'input-clear-' + size : ''"
-     (click)="clearInput()"
+     (click)="clearInput(smartInput.value)"
      *ngIf="clearable"
     ></i>
 </div>
