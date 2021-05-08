@@ -60,7 +60,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "lint-staged": "^10.0.7",
-    "ng-packagr": "^4.2.0",
+    "ng-packagr": "^10.1.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
